@@ -1,0 +1,16 @@
+parameter,symbol,value,units,source
+Solar constant,S0,15.04,W m-2,Hartwick+ 2026
+Downward IR at model top,I_IR,2.0,W m-2,Hartwick+ 2026
+Surface albedo,alpha,0.3,-,Hartwick+ 2026
+Surface emissivity,epsilon,0.95,-,Hartwick+ 2026
+Visible optical depth,tau_vis,8.0,-,Chatain+ 2022
+Infrared optical depth,tau_IR,10.0,-,Hartwick+ 2026
+Visible scaling exponent,gamma,0.21,-,Schneider+ 2012
+IR weighting coefficient,f,0.15,-,Chatain+ 2022
+Single scattering albedo,omega0,0.9,-,Chatain+ 2022
+Asymmetry factor,g,0.85,-,Chatain+ 2022
+Atmospheric layers,N,56.0,-,Hartwick+ 2026
+Surface pressure,p_s,145000.0,Pa,Hartwick+ 2026
+Model top pressure,p_t,66000.0,Pa,Hartwick+ 2026
+Specific heat,c_p,1101.0,J kg-1 K-1,Hartwick+ 2026
+Surface gravity,g,1.352,m s-2,standard

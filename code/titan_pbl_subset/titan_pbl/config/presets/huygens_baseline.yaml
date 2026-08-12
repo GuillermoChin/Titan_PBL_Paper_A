@@ -1,0 +1,372 @@
+﻿# ===========================================================================
+# TITAN-PBL :: Baseline configuration for the Huygens Landing Site
+#
+# Reference: Hartwick, Rafkin & Soto (2026), PSJ 7:178
+#            DOI 10.3847/PSJ/ae809d
+#
+# Every value in this file is a Tier 2 model parameter. No value here should
+# ever appear hardcoded in the source code. Tier 3 runtime overrides may
+# replace any field via dot notation, e.g. "regolith.porosity=0.02".
+# ===========================================================================
+
+metadata:
+  name: "huygens_baseline_dry"
+  description: "Dry regolith baseline replicating Hartwick et al. 2026, Section 3.1"
+  reference: "Hartwick, Rafkin & Soto (2026), PSJ 7:178"
+  config_version: "0.1.0"
+
+# ---------------------------------------------------------------------------
+# Planeta
+# ---------------------------------------------------------------------------
+planet:
+  name: "Titan"
+  gravity: 1.352                      # [m s-2]
+  radius: 2574730.0                   # [m]
+  sol_length: 1378080.0               # [s] Tsol; 86400 pasos x DT=15.95 s del archivo
+  # El paper declara "1 Titan minute, or 954 s" (Sec. 2.2), lo que implicaria
+  # un Tsol de 1373760 s. El archivo da 1378080 s. La discrepancia de 0.31 %
+  # es del paper consigo mismo; ver H-25. Se conserva el valor declarado.
+  minute_length: 954.0                # [s] minuto de Titan declarado en el paper
+  orbital_period: 929596608.0         # [s] anio de Titan (~29.45 anios terrestres)
+  obliquity: 26.73                    # [deg] oblicuidad al Sol (Ec. A2 de Chatain 2022)
+  orbital_eccentricity: 0.0565        # excentricidad de la orbita de Saturno (Ec. A1)
+  perihelion_solar_longitude: 280.0   # [deg] Ls0 en el perihelio (Ec. A1)
+
+# ---------------------------------------------------------------------------
+# Sitio y epoca
+# ---------------------------------------------------------------------------
+site:
+  latitude: -10.5                     # [deg] 10.5 S
+  longitude: -192.0                   # [deg] 192 W (convencion: oeste negativo)
+  solar_longitude_ls: 300.0           # [deg] verano austral tardio
+  start_local_time: 9.5               # [h] 09:30 LT
+  surface_elevation: 0.0              # [m]
+
+# ---------------------------------------------------------------------------
+# Atmosfera: propiedades del gas y grilla vertical
+# ---------------------------------------------------------------------------
+atmosphere:
+  gas:
+    specific_gas_constant: 296.8      # [J kg-1 K-1] N2
+    specific_heat_cp: 1101.0          # [J kg-1 K-1] Tabla 2 del paper
+    reference_density: 5.5759         # [kg m-3] Tabla 2 del paper
+    thermal_conductivity: 0.015       # [W m-1 K-1] Tabla 2 del paper
+
+  vertical_grid:
+    n_layers: 56                      # numero de capas atmosfericas
+    surface_pressure: 145000.0        # [Pa] ~1.45 bar
+    top_pressure: 66000.0             # [Pa] ~0.66 bar
+    top_altitude: 20000.0             # [m] valor nominal citado por el paper;
+                                      # ver nota sobre inconsistencia mas abajo
+    # -----------------------------------------------------------------------
+    # NOTA 1 -- Distribucion vertical inferida, no publicada.
+    #
+    # Hartwick et al. (2026) no especifican como se distribuyen las 56 capas.
+    # El valor de abajo se infirio de dos restricciones independientes del
+    # propio paper:
+    #
+    #   (a) El texto de la Figura 6 identifica el punto medio de la capa mas
+    #       baja con la PBL colapsada de 5.33-5.34 m. Resolver para que
+    #       z_mid[0] = 5.335 m da r = 1.0832.
+    #   (b) Minimizar el error cuadratico medio entre los niveles de la malla
+    #       y las 20 profundidades de PBL reportadas en el paper da r = 1.0830
+    #       con un residual de 1.05 %, compatible con la dispersion esperada
+    #       por diferencias hidrostaticas entre corridas.
+    #
+    # Ambas rutas convergen. La alternativa spacing_type='sigma' es
+    # inconsistente: sus dos restricciones dan 1.727 y 2.140, y el optimo
+    # implicaria z_mid[0] = 1.01 m, incompatible con el texto del paper.
+    #
+    # Esta inferencia debe verificarse y reportarse; no es un dato publicado.
+    #
+    # NOTA 2 -- Inconsistencia en el tope del dominio.
+    #
+    # El paper describe el tope como "0.66 bar (~20 km)". Con el perfil HASI
+    # real, 66000 Pa corresponde a 15104 m y 20000 m corresponde a 49716 Pa.
+    # Ambas cifras no pueden ser simultaneamente correctas. Se conserva la
+    # presion porque la coordenada del modelo es de presion; top_altitude
+    # queda como valor nominal de referencia.
+    # -----------------------------------------------------------------------
+    spacing_type: "geometric"         # sigma | log_pressure | geometric
+    spacing_exponent: 1.083           # razon geometrica entre capas contiguas
+
+  reference_state:
+    reference_pressure: 150000.0      # [Pa] para temperatura potencial (Fig. 4)
+    reference_temperature: 100.0      # [K]
+
+  initialization:
+    profile_source: "hasi"            # hasi | isothermal | custom
+    hasi_file: "data/huygens/HASI_L4_ATMO_PROFILE_DESCEN_TAB_v2.txt"
+    zonal_wind: 0.0                   # [m s-1]
+    meridional_wind: 0.0              # [m s-1]
+
+# ---------------------------------------------------------------------------
+# Subsuelo: estructura de capas
+# La estructura del paper (Tabla 1) es geometrica: 0.01 m con razon 2.0
+# ---------------------------------------------------------------------------
+subsurface:
+  scheme: "conduction"                # esquema registrado de subsuelo
+  n_layers: 10
+  layer_thickness_mode: "geometric"   # geometric | explicit
+  first_layer_thickness: 0.01         # [m]
+  thickness_growth_factor: 2.0        # razon de la progresion geometrica
+  explicit_thicknesses: null          # lista [m] si layer_thickness_mode = explicit
+  deep_temperature: 91.8              # [K] TMN, frontera inferior fija
+  initial_profile_mode: "linear"      # linear | isothermal | custom
+  # La piel superficial ES la capa 0 del subsuelo, no una variable aparte.
+  # Las Figuras 3(c) y 3(e) del paper describen la conduccion y la energia
+  # residual "en la capa de subsuelo mas somera", que son justamente los dos
+  # terminos del balance de la temperatura de piel. Tratarlas como variables
+  # independientes duplica la capacidad calorifica Cv*dz0 y desacopla el
+  # balance. Ver H-18 en docs/HALLAZGOS.md.
+  surface_coupling: "skin_is_top_layer"  # skin_is_top_layer | separate_skin
+  interface_averaging: "harmonic"     # harmonic | arithmetic | geometric
+  geothermal_flux: 0.0                # [W m-2] no parametrizado en el paper
+
+# ---------------------------------------------------------------------------
+# Regolito: composicion y propiedades termicas (Ecs. 6-9)
+# Las propiedades efectivas se CALCULAN a partir de estos componentes.
+# ---------------------------------------------------------------------------
+regolith:
+  porosity: 0.2                       # phi, fraccion de espacio poroso
+  methane_saturation: 0.0             # beta, saturacion de metano en poros
+  # -------------------------------------------------------------------------
+  # Overrides opcionales. En null, las propiedades efectivas se derivan de las
+  # Ecs. 6-9 a partir de la porosidad, la saturacion y los componentes.
+  #
+  # Verificado numericamente para phi=0.2, beta=0:
+  #   rho = 1201.115 kg/m3   (paper: 1201)        Ec. 7
+  #   kappa = 0.0630 W/m/K   (paper: 0.063)       Ec. 8
+  #   TIA = 354.44           (paper: 354.44)      sqrt(kappa*Cv)
+  #   Cv  = 1.994e6 J/m3/K
+  #
+  # ADVERTENCIA: la columna cv de la Tabla 3 del paper es inconsistente con su
+  # propia columna TIA. Los Cv implicados por TIA son 1.994e6, 3.181e6,
+  # 3.181e6, 1.539e6 y 2.614e6 para los tests 1-5, frente a los 1.38, 2.57,
+  # 2.57, 1.05 y 1.16 tabulados. Los factores de discrepancia no son
+  # constantes, de modo que no se trata de un cambio de unidades. Se toma TIA
+  # como referencia de validacion, no la columna cv.
+  #
+  # Los tests 2-5 de la Tabla 3 requieren conductivity_override: sus valores
+  # (0.114, 2.5) no son alcanzables por ninguna porosidad fisica, ya que la
+  # Ec. 8 da kappa = 0.075 - 0.06*phi, acotada en [0.015, 0.075].
+  # -------------------------------------------------------------------------
+  density_override: null                    # [kg m-3] null = Ec. 7
+  conductivity_override: null               # [W m-1 K-1] null = Ec. 8
+  volumetric_heat_capacity_override: null   # [J m-3 K-1] null = Ec. 9
+
+  components:
+    solid_particle:
+      specific_heat: 1800.0           # [J kg-1 K-1] Tokano 2005, MacKenzie+2019
+      density: 1500.0                 # [kg m-3] Burr et al. 2006
+      thermal_conductivity: 0.075     # [W m-1 K-1] Janssen+2016, Schurmeier+2018
+    liquid_methane:
+      specific_heat: 3379.0           # [J kg-1 K-1] NIST
+      density: 447.0                  # [kg m-3]
+      thermal_conductivity: 0.2       # [W m-1 K-1]
+    pore_air:
+      specific_heat: 1101.0           # [J kg-1 K-1] Lemmon & Jacobsen 1998
+      density: 5.5759                 # [kg m-3]
+      thermal_conductivity: 0.015     # [W m-1 K-1] Hathi et al. 2008
+
+# ---------------------------------------------------------------------------
+# Radiacion (esquema gris de banda ancha)
+# ---------------------------------------------------------------------------
+# El esquema completo esta en el Apendice A de Chatain et al. (2022),
+# arXiv:2210.03278, Ecs. A1 a A16. Hartwick et al. (2026) lo cita pero no lo
+# reproduce, y sus valores difieren de los publicados por Chatain en cuatro
+# parametros. Se toman por defecto los de Hartwick, que es el objetivo de
+# replicacion; los de Chatain estan en el preset chatain2022_radiation.
+#
+#   parametro            Hartwick 2026   Chatain 2022 (ajustado a DISR)
+#   -------------------  --------------  ------------------------------
+#   tau_vis                    10                8
+#   surface_emissivity        0.95              0.9
+#   ir_top_flux                2.0              1.55
+#   albedo (tierra)           0.30              0.3   (coincide)
+#
+# Chatain ajusto omega0, tau_vis y g contra los flujos de Huygens/DISR
+# (Tomasko et al. 2008), de modo que sus valores tienen respaldo
+# observacional directo. La discrepancia debe cuantificarse en la validacion.
+# -------------------------------------------------------------------------
+radiation:
+  scheme: "gray"
+  solar_scheme: "two_stream"          # two_stream | beer_lambert | none
+  ir_scheme: "schneider"              # schneider | none
+  apply_eccentricity_correction: true # Ec. A1
+  mean_cosine: 0.5773502691896258     # mu-bar = 1/sqrt(3), Ec. A5-A6
+  solar_constant: 15.04               # [W m-2] S0 a distancia media (Ec. A1)
+  ir_top_flux: 2.0                    # [W m-2] I_IR descendente en el tope
+  surface_albedo: 0.30                # alpha (Ec. 2 / Ec. A9)
+  surface_emissivity: 0.95            # epsilon (Ec. 2 / Ec. A14)
+  # -------------------------------------------------------------------------
+  # tau_vis = 8, NO el 10 que aparece en el texto de Hartwick et al. (2026).
+  #
+  # Evidencia. El flujo solar neto en superficie al mediodia resulta:
+  #     tau_vis = 8   ->  2.073 W/m2
+  #     tau_vis = 10  ->  1.220 W/m2
+  # La Figura 3(a) del propio Hartwick muestra un pico cercano a 2.0 W/m2, de
+  # modo que su figura es consistente con 8 y no con el 10 de su texto. El
+  # valor 8 es ademas el que Chatain et al. (2022) ajustaron contra los flujos
+  # de Huygens/DISR (Tomasko et al. 2008). La frase "tau_vis, tau_IR = 10"
+  # parece referirse solo a tau_IR.
+  #
+  # Se adopta 8 porque el objetivo es replicar los RESULTADOS del paper, no
+  # su erratum. Poner 10 aqui reproduce la lectura literal del texto.
+  # -------------------------------------------------------------------------
+  optical_depth_visible: 8.0          # tau_vis (Ec. A3)
+  optical_depth_ir: 10.0              # tau_IR  (Ec. A13)
+  visible_scaling_exponent: 0.21      # gamma, Schneider et al. 2012
+  ir_weighting_coefficient: 0.15      # f
+  single_scattering_albedo: 0.9       # omega_0 (atmosferico, NO albedo de superficie)
+  asymmetry_factor: 0.85              # g
+  update_interval_steps: 1            # cada cuantos pasos se recalcula
+
+# ---------------------------------------------------------------------------
+# Capa superficial: teoria de similitud Monin-Obukhov
+# ---------------------------------------------------------------------------
+surface_layer:
+  scheme: "most"
+  roughness_length: 0.4               # [m] z0, Plains Geomorphological Unit
+  initial_friction_velocity: 0.1      # [m s-1] u* en el primer paso
+  beljaars_gustiness: 1.44            # coeficiente empirico beta (Beljaars 1995)
+  von_karman_constant: 0.4
+  min_friction_velocity: 1.0e-4       # [m s-1] piso numerico
+  roughness_length_heat: null         # [m] z0h; null = igual a z0
+  # El paper cita a Janjic (1994) para las funciones de estabilidad pero no da
+  # sus formas funcionales. Se usan Businger-Dyer por defecto, que es el
+  # estandar y esta bien documentado; las alternativas quedan disponibles.
+  stability_functions: "businger_dyer"  # businger_dyer | beljaars_holtslag | neutral
+  unstable_coefficient: 16.0
+  stable_coefficient: 5.0
+  apply_beljaars_correction: true     # Beljaars 1995, escala convectiva w*
+  minimum_convective_depth: 100.0     # [m] usado antes de diagnosticar la PBL
+  max_iterations: 30
+  convergence_tolerance: 1.0e-8
+  max_stability_parameter: 10.0       # cota de |z/L|
+  # El primer nivel atmosferico esta a ~5.4 m y z0 = 0.4 m, de modo que
+  # ln(z/z0) = 2.60. Bajo inestabilidad fuerte psi_m alcanza 2.55 y el
+  # denominador de similitud casi se anula, haciendo divergir el coeficiente
+  # de intercambio. Se acota el denominador a una fraccion de su valor neutro.
+  # Ver H-13 en docs/HALLAZGOS.md.
+  # Con psi_H del orden de 30 W/m2/K y una capacidad areal de 19941 J/m2/K,
+  # el tiempo de relajacion superficie-aire cae a ~700 s, por debajo del paso
+  # de 954 s. Un avance explicito produce oscilacion de relajacion. Ver H-19.
+  implicit_skin_update: true
+  min_denominator_fraction: 0.25
+
+# ---------------------------------------------------------------------------
+# Turbulencia: esquema MYJ
+# ---------------------------------------------------------------------------
+turbulence:
+  scheme: "myj"
+  tke_critical: 6.0e-4                # [m2 s-2] umbral de diagnostico de PBL
+  tke_minimum: 1.0e-9                 # [m2 s-2] piso numerico
+  mixing_length_max: 300.0            # [m]
+  richardson_critical: 0.25
+  diffusivity_min: 1.0e-6             # [m2 s-1]
+  diffusivity_max: 1000.0             # [m2 s-1]
+  # -------------------------------------------------------------------------
+  # Cierre de Mellor-Yamada nivel 2.5 en la forma de cuasi-equilibrio de
+  # Galperin et al. (1988), que es la que implementan la mayoria de los
+  # modelos. Con G_H = 0 las funciones de estabilidad valen S_M = 0.3933 y
+  # S_H = 0.4939, los valores neutros estandar.
+  #
+  # ADVERTENCIA sobre el umbral de PBL. El paper escribe el umbral como
+  # "k = 0.0006 mN-2 s-2", que no es dimensionalmente valido. La ECT tiene
+  # unidades de m2 s-2, de modo que se interpreta 6.0e-4 m2 s-2. Ver H-16.
+  #
+  # El paper cita a Janjic (1994) y a Hu et al. (2010) pero no da constantes
+  # de cierre ni la forma de la escala de longitud. Todo queda ajustable.
+  # -------------------------------------------------------------------------
+  length_scale: "blackadar"           # blackadar | constant
+  apply_stable_length_limit: true
+  stable_length_coefficient: 0.53
+  dissipation_constant_b1: 16.6       # B1 de Mellor-Yamada
+  neutral_momentum_stability: 0.3933  # S_M en G_H = 0
+  neutral_heat_stability: 0.4939      # S_H en G_H = 0
+  galperin_heat_denominator: 34.6764
+  galperin_momentum_numerator: 3.0858
+  galperin_momentum_denominator: 6.1272
+  stability_limit_stable: 0.0233      # cota superior de G_H
+  stability_limit_unstable: -0.28     # cota inferior de G_H
+  # La produccion por flotabilidad alimenta K_h, que alimenta la produccion.
+  # Con disipacion explicita ese lazo sobrepasa a dt = 954 s y la ECT diverge.
+  # Ver H-20 en docs/HALLAZGOS.md.
+  tke_maximum: 10.0                   # [m2 s-2] techo numerico
+  implicit_dissipation: true
+  include_tke_transport: true
+  tke_transport_prandtl: 1.0
+  # En la configuracion 1D los vientos horizontales son invariantes, de modo
+  # que no hay produccion por cizalla y la variacion es solo por flotabilidad.
+  prescribed_shear: 0.0               # [s-1]
+
+# ---------------------------------------------------------------------------
+# Metano: esquema de evaporacion y parametros comunes
+# scheme: none | sps | nsmt | mrps
+# ---------------------------------------------------------------------------
+methane:
+  scheme: "none"                      # baseline seco
+  latent_heat_vaporization: 5.1e5     # [J kg-1] XLV (Ec. 5)
+  molecular_diffusivity_air: 2.05e-6  # [m2 s-1] D_a
+  tortuosity_exponent: 1.3333333      # 4/3 en Ec. 16
+  molar_mass: 0.016043                # [kg mol-1] CH4
+  allow_atmospheric_condensation: false  # el paper NO lo incluye
+  infinite_reservoir: true            # supuesto del paper; se relaja en v0.2.0
+
+  initial_atmospheric_profile:
+    source: "gautier2024"             # gautier2024 | niemann2010 | zero | custom
+    custom_file: null
+    surface_mixing_ratio: 0.0296      # [kg kg-1] valor cerca de superficie
+
+  saturation:
+    formulation: "antoine"            # antoine | clausius_clapeyron | tabulated
+    antoine_A: 3.9895                 # log10(P[bar]) = A - B/(T+C), NIST CH4
+    antoine_B: 443.028
+    antoine_C: -0.49
+
+  sps:
+    porosity: null                    # null = usar regolith.porosity
+
+  nsmt:
+    methane_table_depth: 0.04         # [m] z
+    porosity: null
+
+  mrps:
+    pore_methane_abundance: 0.04      # beta
+    porosity: null
+
+# ---------------------------------------------------------------------------
+# Simulacion y numerica
+# ---------------------------------------------------------------------------
+simulation:
+  n_sols: 5                           # duracion total en Tsol
+  spinup_sols: 1                      # Tsol descartados del analisis
+  timestep: 954.0                     # [s] dt = 1 minuto de Titan
+  time_integrator: "rk4"              # rk4 | euler | crank_nicolson
+  diffusion_solver: "crank_nicolson"  # implicito para difusion vertical
+  max_iterations_implicit: 50
+  convergence_tolerance: 1.0e-10
+
+# ---------------------------------------------------------------------------
+# Salida
+# ---------------------------------------------------------------------------
+output:
+  directory: "data/outputs"
+  format: "netcdf"                    # netcdf | hdf5
+  write_interval_steps: 1
+  variables:
+    - "surface_temperature"
+    - "air_temperature"
+    - "potential_temperature"
+    - "pbl_depth"
+    - "sensible_heat_flux"
+    - "latent_heat_flux"
+    - "ground_heat_flux"
+    - "net_radiation"
+    - "shortwave_down"
+    - "longwave_down"
+    - "methane_flux"
+    - "methane_mixing_ratio"
+    - "subsurface_temperature"
+    - "tke"

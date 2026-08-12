@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: "If you use this software or its outputs, please cite it as below."
+title: "Paper A reproduction package: Radiative Timescale Constraints on Boundary Layer Evolution in Models of Titan"
+abstract: >-
+  Code and outputs reproducing every figure and table of the manuscript
+  "Radiative Timescale Constraints on Boundary Layer Evolution in Models of Titan".
+  A subset of the titan_pbl framework, comprising the configuration subsystem,
+  the vertical grid, the model state and the gray radiation scheme.
+type: software
+authors:
+  - family-names: "Chin-Canche"
+    given-names: "Guillermo Adrian"
+    affiliation: "Instituto Tecnológico Superior de Calkiní, Tecnológico Nacional de México"
+    # orcid: "https://orcid.org/0000-0003-2104-6625"
+version: "0.1.0"
+date-released: "2026-08-12"
+license: BSD-3-Clause
+keywords:
+  - Titan
+  - planetary boundary layer
+  - radiative timescales
+  - surface energy balance
+  - atmospheric modeling
+  - Huygens
+# doi: 10.5281/zenodo.21909362
+references:
+  - type: article
+    authors:
+      - family-names: "Hartwick"
+        given-names: "V. L."
+      - family-names: "Rafkin"
+        given-names: "S. C. R."
+      - family-names: "Soto"
+        given-names: "A."
+    title: "Modeling Titan's Planetary Boundary Layer at the Huygens Landing Site"
+    journal: "The Planetary Science Journal"
+    volume: 7
+    year: 2026
+    doi: "10.3847/PSJ/ae809d"
+  - type: dataset
+    authors:
+      - family-names: "Hartwick"
+        given-names: "V. L."
+      - family-names: "Rafkin"
+        given-names: "S. C. R."
+      - family-names: "Soto"
+        given-names: "A."
+    title: "Simulation archive for Modeling Titan's Planetary Boundary Layer"
+    year: 2026
+    doi: "10.5281/zenodo.17246644"

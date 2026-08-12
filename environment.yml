@@ -1,0 +1,16 @@
+# Entorno exacto que produjo las figuras y tablas del Paper A.
+# Versiones fijadas, no rangos: es un artefacto de reproducibilidad.
+name: titan_pbl_paper_A
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11.15
+  - numpy=2.4.6
+  - scipy=1.17.1
+  - pandas=3.0.5
+  - matplotlib=3.11.1
+  - xarray=2026.7.0
+  - netcdf4=1.7.4
+  - pyyaml=6.0.3
+  - pydantic=2.13.4
