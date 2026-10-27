@@ -85,10 +85,23 @@ class RadiationScheme(PhysicsScheme):
     def net_surface_flux(self, state: ModelState) -> float:
         """Net radiative flux absorbed by the surface Qrad [W m-2], Equation 2.
 
-        Equals ``(1 - albedo) * SW_down + LW_down - emissivity * sigma * Ts**4``,
-        with the albedo and emissivity read from the configuration and the
-        Stefan-Boltzmann constant taken from
-        :mod:`titan_pbl.config.physical_constants`.
+        The longwave term depends on ``radiation.surface_lw_boundary``:
+
+        - ``"full_absorption"`` (Equation 2 of Hartwick et al. 2026, declared
+          by every preset): ``(1 - albedo) * SW_down + LW_down -
+          emissivity * sigma * Ts**4``. The surface absorbs all of the
+          downward longwave and the upward flux at the surface is the
+          emission alone.
+        - ``"kirchhoff"``: ``(1 - albedo) * SW_down + emissivity * LW_down -
+          emissivity * sigma * Ts**4``. The surface reflects
+          ``(1 - emissivity) * LW_down``, which then enters the upward flux at
+          the surface.
+
+        In both cases the albedo and emissivity are read from the
+        configuration and the Stefan-Boltzmann constant is taken from
+        :mod:`titan_pbl.config.physical_constants`, and the interface
+        conserves energy: Qrad equals the net downward radiative flux at the
+        surface. See H-27.
         """
 
     @abstractmethod

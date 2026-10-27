@@ -64,6 +64,15 @@ function, so no vertical iteration is needed for the shortwave.
 Sign convention
 ---------------
 All fluxes are positive downward.
+
+Surface longwave boundary
+-------------------------
+``radiation.surface_lw_boundary`` selects how the surface treats the downward
+longwave flux. ``"full_absorption"`` reproduces Equation 2 of Hartwick et al.
+(2026): the surface absorbs all of it and emits eps*sigma*Ts^4. ``"kirchhoff"``
+makes the surface absorb eps*F_down and reflect (1 - eps)*F_down, so that an
+isothermal column is in radiative equilibrium. Every preset declares
+``"full_absorption"`` explicitly. See H-27.
 """
 
 from __future__ import annotations
@@ -372,9 +381,11 @@ class GrayRadiation(RadiationScheme):
     ) -> tuple[NDArray[np.float64], NDArray[np.float64]]:
         """Downward and upward longwave fluxes at interfaces [W m-2].
 
-        Integrates Equations A15 and A16 layer by layer: the upward flux
-        starts from the surface emission and the downward flux from the
-        prescribed flux at the model top.
+        Integrates Equations A15 and A16 layer by layer: the downward flux
+        starts from the prescribed flux at the model top and the upward flux
+        from the surface. At the surface the upward flux is the emission
+        ``eps*sigma*Ts^4``, plus the reflected ``(1 - eps)*F_down(0)`` when
+        ``radiation.surface_lw_boundary`` is ``"kirchhoff"`` (see H-27).
         """
         radiation = self.config.radiation
         tau = self.infrared_optical_depth(state)
@@ -394,23 +405,48 @@ class GrayRadiation(RadiationScheme):
         upward = np.empty(n, dtype=np.float64)
         downward = np.empty(n, dtype=np.float64)
 
-        # Ec. A15: integracion ascendente desde la superficie.
-        upward[0] = self.surface_emission(state)
-        for k in range(state.grid.n_atmospheric_layers):
-            upward[k + 1] = upward[k] * transmission[k] + emission[k] * (
-                1.0 - transmission[k]
-            )
-
         # Ec. A16: integracion descendente desde el tope del modelo.
         # Chatain fija F^-(0) = 0; Hartwick prescribe un flujo I_IR no nulo
-        # que representa la atmosfera por encima del dominio.
+        # que representa la atmosfera por encima del dominio. Sin dispersion
+        # el flujo descendente no depende del ascendente, de modo que se
+        # integra primero: la frontera de Kirchhoff necesita F^-(0).
         downward[-1] = radiation.ir_top_flux
         for k in range(state.grid.n_atmospheric_layers - 1, -1, -1):
             downward[k] = downward[k + 1] * transmission[k] + emission[k] * (
                 1.0 - transmission[k]
             )
 
+        # Ec. A15: integracion ascendente desde la superficie. Con
+        # 'full_absorption' la superficie solo emite; con 'kirchhoff' refleja
+        # ademas la fraccion (1 - eps) del flujo descendente (H-27).
+        upward[0] = self.surface_emission(state)
+        if radiation.surface_lw_boundary == "kirchhoff":
+            upward[0] = upward[0] + self._reflected_longwave(float(downward[0]))
+        for k in range(state.grid.n_atmospheric_layers):
+            upward[k + 1] = upward[k] * transmission[k] + emission[k] * (
+                1.0 - transmission[k]
+            )
+
         return downward, upward
+
+    def _reflected_longwave(self, downward_surface: float) -> float:
+        """Reflected part (1 - eps) * F_down(0) of the downward longwave [W m-2]."""
+        emissivity = self.config.radiation.surface_emissivity
+        return float((1.0 - emissivity) * downward_surface)
+
+    def surface_reflected_longwave(self, state: ModelState) -> float:
+        """Downward longwave reflected by the surface [W m-2].
+
+        Equals ``(1 - eps) * F_down(0)`` when ``radiation.surface_lw_boundary``
+        is ``"kirchhoff"`` and zero when it is ``"full_absorption"``, where the
+        surface absorbs all of the downward longwave. Provided as a method
+        rather than a :meth:`diagnostics` key so that existing diagnostic
+        tables keep their columns.
+        """
+        if self.config.radiation.surface_lw_boundary != "kirchhoff":
+            return 0.0
+        downward, _ = self.longwave_fluxes(state)
+        return self._reflected_longwave(float(downward[0]))
 
     # =======================================================================
     # Ecuacion 2: balance radiativo en superficie
@@ -419,16 +455,31 @@ class GrayRadiation(RadiationScheme):
     def net_surface_flux(self, state: ModelState) -> float:
         """Net radiative flux absorbed by the surface Qrad [W m-2], Equation 2.
 
+        With ``radiation.surface_lw_boundary = "full_absorption"`` (Equation 2
+        of Hartwick et al. 2026, the default of every preset):
+
         .. math::
             Q_{rad} = (1 - \\alpha) SW^\\downarrow + LW^\\downarrow
+                      - \\epsilon \\sigma T_s^4
+
+        With ``"kirchhoff"`` the surface absorbs only the fraction epsilon of
+        the downward longwave and reflects the rest:
+
+        .. math::
+            Q_{rad} = (1 - \\alpha) SW^\\downarrow + \\epsilon LW^\\downarrow
                       - \\epsilon \\sigma T_s^4
         """
         radiation = self.config.radiation
         shortwave_down, _ = self.shortwave_fluxes(state)
         longwave_down, _ = self.longwave_fluxes(state)
 
-        # Ec. 2 de Hartwick et al. 2026
         absorbed_shortwave = (1.0 - radiation.surface_albedo) * float(shortwave_down[0])
+        if radiation.surface_lw_boundary == "kirchhoff":
+            # Kirchhoff: absorbe eps LW_down y refleja (1 - eps) LW_down (H-27).
+            absorbed_longwave = radiation.surface_emissivity * float(longwave_down[0])
+            return absorbed_shortwave + absorbed_longwave - self.surface_emission(state)
+
+        # Ec. 2 de Hartwick et al. 2026
         return (
             absorbed_shortwave + float(longwave_down[0]) - self.surface_emission(state)
         )

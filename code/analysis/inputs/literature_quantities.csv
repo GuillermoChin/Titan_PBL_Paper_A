@@ -1,0 +1,10 @@
+id,study,value_K,nature,Ta_height,citation_status,source_page,note
+v0_generic_low,Section 4 studies of the original submission (generic),0.1,surface-to-air contrast (as stated in the original submission),not stated,original submission only,,the original submission does not attribute the range to a study; not found as a surface-to-air contrast in the sources
+v0_generic_high,Section 4 studies of the original submission (generic),2.0,surface-to-air contrast (as stated in the original submission),not stated,original submission only,,"same; Lebonnois et al. (2012, p. 13) give ~2 K, but as a latitudinal contrast of Ts, not a surface-to-air contrast"
+hanlora_amp_low,Han & Lora 2025,0.12,diurnal amplitude of Ts (not a contrast),n/a (Ts),verified in the source,5,Case 3 (I = 1732 TIU)
+hanlora_amp_high,Han & Lora 2025,0.21,diurnal amplitude of Ts (not a contrast),n/a (Ts),verified in the source,5,Case 1 (I = 173 TIU)
+hartwick_gt1K,Hartwick et al. 2026,1.0,increase of Ts between runs (not a contrast),n/a (Ts),verified in the source,10,the text of Hartwick et al. does not give a surface-to-air contrast
+archive_dTs,Archive of Hartwick et al. 2026 (dTs between runs),1.22,increase of Ts between runs (not a contrast),n/a (Ts),original submission + archive reading,,"Table 4 of the original submission (1.222 K, sol 5)"
+charnay_theta_10m,Charnay & Lebonnois 2012 (HASI datum they quote),0.17,potential temperature difference ground - 10 m (observational),10 m,verified in the source,1,not in the original submission
+charnay_Ts_amp,Charnay & Lebonnois 2012,0.4,diurnal variation of the model Ts (not a contrast),n/a (Ts),verified in the source,1,not in the original submission
+tokano2006_qual,Tokano et al. 2006,,qualitative,not stated,verified in the source,1,not quantified

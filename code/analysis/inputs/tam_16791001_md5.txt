@@ -1,0 +1,11 @@
+# MD5 published by Zenodo for the diurnal TAM files of Han and Lora (2025),
+# record 10.5281/zenodo.16791001 (version 2, with diff_t/diff_m). The analyses
+# stop if a local file differs. The seasonal files are not used.
+atmos_diurnal_case1_dragonfly.nc md5=286e124a121ca33fb736d229c5d85634
+atmos_diurnal_case1_huygens.nc md5=ef2cbdca2c54171dfd1efaa3f58be0f5
+atmos_diurnal_case2_dragonfly.nc md5=4c35537f040bcf13609ad04e2d2605ae
+atmos_diurnal_case2_huygens.nc md5=8419fb7de9596599136a44f3702bfd85
+atmos_diurnal_case3_dragonfly.nc md5=60ce8f1ec84bd0b51a135f3bd91d6140
+atmos_diurnal_case3_huygens.nc md5=a4d3dde5d8cd8f2079940d5bc8485017
+atmos_diurnal_case4_dragonfly.nc md5=ebb60c38804e1d88941e3fc600ae37ff
+atmos_diurnal_case4_huygens.nc md5=78e6d51b289a8ab480413737109cd5be

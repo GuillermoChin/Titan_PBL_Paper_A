@@ -1,0 +1,980 @@
+{
+ "per_version": {
+  "V3.6": {
+   "role": "declarada por el atributo TITLE del archivo",
+   "commit": "4e0eea272711837dbb57d9485234b606b07507d8",
+   "hits": [
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1026,
+     "text": "      RLOW=PLOW/(R_D*TLOW)"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 837,
+     "text": "      HSFLX=AKHS*(THLOW-THZ0)"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1030,
+     "text": "      HFX=-RLOW*CP*HSFLX"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1033,
+     "text": "      FLHC=RLOW*CP*AKHS"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_surface_driver.F",
+     "line": 2303,
+     "text": "          CALL SLAB(t_phy,qv_curr,p_phy,flhc,flqc,  &"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 325,
+     "text": "         THCON=(P1000mb*0.001/PL)**ROVCP"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 326,
+     "text": "         THX(I)=SCR3(I)*THCON"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 409,
+     "text": "                THG=TSK(I)*(100./PSFC(I))**ROVCP"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 410,
+     "text": "                HFX(I)=FLHC(I)*(THG-THX(I))"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 443,
+     "text": "                HFXT=FLHC(I)*(THG-THX(I))"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 413,
+     "text": "        QS(I)=HFX(I)+QFX(I)*XLV"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 416,
+     "text": "          DTHGDT(I)=(RNET(I)-QS(I))/CAPG(I)-HM(I)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 31,
+     "text": "      REAL,PARAMETER :: CAPA=R_D/CP"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 477,
+     "text": "        THSK(I,J)=TSK(I,J)*(1.E5/PSFC)**CAPA"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 527,
+     "text": "            RHOK(K,I)=PMID(I,KFLIP,J)/(R_D*T(I,KFLIP,J)*               &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 358,
+     "text": "          SEAMASK=XLAND(I,J)-1."
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 541,
+     "text": "          SEAMASK=XLAND(I,J)-1."
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 542,
+     "text": "          THZ0(I,J)=(1.-SEAMASK)*THSK(I,J)+SEAMASK*THZ0(I,J)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 545,
+     "text": "          AKHS_DENS=AKHS(I,J)*RHOK(KTE+1-LLOW,I)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 569,
+     "text": "          SZ0(1)=THZ0(I,J)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 596,
+     "text": "          CALL VDIFH(DTDIF,LMH,NSPECS,NSPECE,LPBL(I,J),SZ0             &  !BSF"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 1505,
+     "text": "        RKSS=RKHS*CLOW(M)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 1508,
+     "text": "        SPECIES(M,LMH)=(DTOZS*RKSS*SZ0(M)+RSSB)/CMSB"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1288,
+     "text": "             CALL myjpbl(DT=dt,STEPBL=stepbl,HT=ht,DZ=dz8w          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1293,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1316,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1386,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1436,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1299,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh,MIXHT=mixht             &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1323,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh                         &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1392,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh                         &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1442,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh                         &"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 226,
+     "text": "          THSK(I,J)=TSK(I,J)/(PSFC/P1000mb)**CAPA"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 525,
+     "text": "            THZ0=THS"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 653,
+     "text": "        THZ0=THS"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 788,
+     "text": "            AKHS=MAX(USTARK/SIMH,CXCHL)"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 616,
+     "text": "            AKHS=MAX(USTARK/SIMH,CXCHS)"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1027,
+     "text": "      CHS=AKHS"
+    }
+   ],
+   "myjpbl_uncommented_refs_to_HFX_or_FLHC": [],
+   "pbl_driver_call_line": 1288,
+   "pbl_driver_call_block": [
+    "             CALL myjpbl(DT=dt,STEPBL=stepbl,HT=ht,DZ=dz8w          &",
+    "              ,PMID=p_phy,PINT=p8w,TH=th_phy,T=t_phy,EXNER=pi_phy   &",
+    "              ,QV=qv_curr,QCW=qc_curr,QCI=qi_curr,QCS=qs_curr       & !BSF",
+    "              ,QCR=qr_curr,QCG=qg_curr                              & !BSF",
+    "              ,U=u_phy,V=v_phy,RHO=rho                              &",
+    "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &",
+    "              ,QZ0=qz0,UZ0=uz0,VZ0=vz0                              &",
+    "              ,LOWLYR=lowlyr                                        &",
+    "              ,XLAND=xland,SICE=xice,SNOW=snow                      &",
+    "              ,TKE_MYJ=tke_pbl,EXCH_H=exch_h,USTAR=ust,ZNT=znt      &",
+    "              ,EL_MYJ=el_pbl,PBLH=pblh,KPBL=kpbl,CT=ct              &",
+    "              ,AKHS=akhs,AKMS=akms,ELFLX=lh,MIXHT=mixht             &",
+    "              ,RUBLTEN=rublten,RVBLTEN=rvblten,RTHBLTEN=rthblten    &",
+    "              ,RQVBLTEN=rqvblten,RQCBLTEN=rqcblten                  &",
+    "              ,RQIBLTEN=rqiblten,RQSBLTEN=rqsblten                  & !BSF",
+    "              ,RQRBLTEN=rqrblten,RQGBLTEN=rqgblten                  & !BSF",
+    "              ,IDS=ids,IDE=ide,JDS=jds,JDE=jde,KDS=kds,KDE=kde      &",
+    "              ,IMS=ims,IME=ime,JMS=jms,JME=jme,KMS=kms,KME=kme      &",
+    "              ,ITS=its,ITE=ite,JTS=jts,JTE=jte,KTS=kts,KTE=kte      &",
+    "                                                                    )"
+   ],
+   "call_passes_hfx_or_flhc": false,
+   "call_passes_THZ0_and_AKHS": true,
+   "coupling_located": true,
+   "verdict": "Consistente"
+  },
+  "V3.0": {
+   "role": "v3 mas antiguo disponible",
+   "commit": "d640411a980e472afe9ff339f8bf55e8132666f4",
+   "hits": [
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 992,
+     "text": "      RLOW=PLOW/(R_D*TLOW)"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 803,
+     "text": "      HSFLX=AKHS*(THLOW-THZ0)"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 996,
+     "text": "      HFX=-RLOW*CP*HSFLX"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 999,
+     "text": "      FLHC=RLOW*CP*AKHS"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_surface_driver.F",
+     "line": 824,
+     "text": "          CALL SLAB(t_phy,qv_curr,p_phy,flhc,flqc,  &"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 367,
+     "text": "         THCON=(P1000mb*0.001/PL)**ROVCP"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 368,
+     "text": "         THX(I)=SCR3(I)*THCON"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 451,
+     "text": "                THG=TSK(I)*(100./PSFC(I))**ROVCP"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 452,
+     "text": "                HFX(I)=FLHC(I)*(THG-THX(I))"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 485,
+     "text": "                HFXT=FLHC(I)*(THG-THX(I))"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 455,
+     "text": "        QS(I)=HFX(I)+QFX(I)*XLV"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 458,
+     "text": "          DTHGDT(I)=(RNET(I)-QS(I))/CAPG(I)-HM(I)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 31,
+     "text": "      REAL,PARAMETER :: CAPA=R_D/CP"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 414,
+     "text": "        THSK(I,J)=TSK(I,J)*(1.E5/PSFC)**CAPA"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 437,
+     "text": "            RHOK(K,I)=PMID(I,KFLIP,J)/(R_D*T(I,KFLIP,J)*               &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 296,
+     "text": "          SEAMASK=XLAND(I,J)-1."
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 451,
+     "text": "          SEAMASK=XLAND(I,J)-1."
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 452,
+     "text": "          THZ0(I,J)=(1.-SEAMASK)*THSK(I,J)+SEAMASK*THZ0(I,J)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 455,
+     "text": "          AKHS_DENS=AKHS(I,J)*RHOK(KTE+1-LLOW,I)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 487,
+     "text": "          CALL VDIFH(DTDIF,LMH,THZ0(I,J),QZ0(I,J)                      &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 1347,
+     "text": "      THE(LMH)=(DTOZS*RKHS*THZ0+RSTB)/CMTB"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 562,
+     "text": "             CALL myjpbl(                                           &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 567,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 573,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh                         &"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 223,
+     "text": "          THSK(I,J)=TSK(I,J)/(PSFC/P1000mb)**CAPA"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 518,
+     "text": "            THZ0=THS"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 644,
+     "text": "        THZ0=THS"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 754,
+     "text": "            AKHS=MAX(USTARK/SIMH,CXCHL)"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 607,
+     "text": "            AKHS=MAX(USTARK/SIMH,CXCHS)"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 993,
+     "text": "      CHS=AKHS"
+    }
+   ],
+   "myjpbl_uncommented_refs_to_HFX_or_FLHC": [],
+   "pbl_driver_call_line": 562,
+   "pbl_driver_call_block": [
+    "             CALL myjpbl(                                           &",
+    "               DT=dt,STEPBL=stepbl,HT=ht,DZ=dz8w                    &",
+    "              ,PMID=p_phy,PINT=p8w,TH=th_phy,T=t_phy,EXNER=pi_phy   &",
+    "              ,QV=qv_curr, CWM=qc_curr                               &",
+    "              ,U=u_phy,V=v_phy,RHO=rho                              &",
+    "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &",
+    "              ,QZ0=qz0,UZ0=uz0,VZ0=vz0                              &",
+    "              ,LOWLYR=lowlyr                                        &",
+    "              ,XLAND=xland,SICE=xice,SNOW=snow                      &",
+    "              ,TKE_MYJ=tke_myj,EXCH_H=exch_h,USTAR=ust,ZNT=znt      &",
+    "              ,EL_MYJ=el_myj,PBLH=pblh,KPBL=kpbl,CT=ct              &",
+    "              ,AKHS=akhs,AKMS=akms,ELFLX=lh                         &",
+    "              ,RUBLTEN=rublten,RVBLTEN=rvblten,RTHBLTEN=rthblten    &",
+    "              ,RQVBLTEN=rqvblten,RQCBLTEN=rqcblten                  &",
+    "              ,IDS=ids,IDE=ide,JDS=jds,JDE=jde,KDS=kds,KDE=kde      &",
+    "              ,IMS=ims,IME=ime,JMS=jms,JME=jme,KMS=kms,KME=kme      &",
+    "              ,ITS=its,ITE=ite,JTS=jts,JTE=jte,KTS=kts,KTE=kte      &",
+    "                                                                    )"
+   ],
+   "call_passes_hfx_or_flhc": false,
+   "call_passes_THZ0_and_AKHS": true,
+   "coupling_located": true,
+   "verdict": "Consistente"
+  },
+  "V3.9.1.1": {
+   "role": "v3 tardio (ultimo v3)",
+   "commit": "d034ad7f6770540a0ab3881a07ca1a5fe2168da3",
+   "hits": [
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1026,
+     "text": "      RLOW=PLOW/(R_D*TLOW)"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 837,
+     "text": "      HSFLX=AKHS*(THLOW-THZ0)"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1030,
+     "text": "      HFX=-RLOW*CP*HSFLX"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1033,
+     "text": "      FLHC=RLOW*CP*AKHS"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_surface_driver.F",
+     "line": 2415,
+     "text": "          CALL SLAB(t_phy,qv_curr,p_phy,flhc,flqc,  &"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 325,
+     "text": "         THCON=(P1000mb*0.001/PL)**ROVCP"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 326,
+     "text": "         THX(I)=SCR3(I)*THCON"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 409,
+     "text": "                THG=TSK(I)*(100./PSFC(I))**ROVCP"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 410,
+     "text": "                HFX(I)=FLHC(I)*(THG-THX(I))"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 443,
+     "text": "                HFXT=FLHC(I)*(THG-THX(I))"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 413,
+     "text": "        QS(I)=HFX(I)+QFX(I)*XLV"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 416,
+     "text": "          DTHGDT(I)=(RNET(I)-QS(I))/CAPG(I)-HM(I)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 31,
+     "text": "      REAL,PARAMETER :: CAPA=R_D/CP"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 477,
+     "text": "        THSK(I,J)=TSK(I,J)*(1.E5/PSFC)**CAPA"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 527,
+     "text": "            RHOK(K,I)=PMID(I,KFLIP,J)/(R_D*T(I,KFLIP,J)*               &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 358,
+     "text": "          SEAMASK=XLAND(I,J)-1."
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 541,
+     "text": "          SEAMASK=XLAND(I,J)-1."
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 542,
+     "text": "          THZ0(I,J)=(1.-SEAMASK)*THSK(I,J)+SEAMASK*THZ0(I,J)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 545,
+     "text": "          AKHS_DENS=AKHS(I,J)*RHOK(KTE+1-LLOW,I)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 569,
+     "text": "          SZ0(1)=THZ0(I,J)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 596,
+     "text": "          CALL VDIFH(DTDIF,LMH,NSPECS,NSPECE,LPBL(I,J),SZ0             &  !BSF"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 1505,
+     "text": "        RKSS=RKHS*CLOW(M)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 1508,
+     "text": "        SPECIES(M,LMH)=(DTOZS*RKSS*SZ0(M)+RSSB)/CMSB"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1440,
+     "text": "             CALL myjpbl(DT=dt,STEPBL=stepbl,HT=ht,DZ=dz8w          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1445,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1468,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1538,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1451,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh,MIXHT=mixht             &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1475,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh                         &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1544,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh                         &"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 226,
+     "text": "          THSK(I,J)=TSK(I,J)/(PSFC/P1000mb)**CAPA"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 525,
+     "text": "            THZ0=THS"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 653,
+     "text": "        THZ0=THS"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 788,
+     "text": "            AKHS=MAX(USTARK/SIMH,CXCHL)"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 616,
+     "text": "            AKHS=MAX(USTARK/SIMH,CXCHS)"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1027,
+     "text": "      CHS=AKHS"
+    }
+   ],
+   "myjpbl_uncommented_refs_to_HFX_or_FLHC": [],
+   "pbl_driver_call_line": 1440,
+   "pbl_driver_call_block": [
+    "             CALL myjpbl(DT=dt,STEPBL=stepbl,HT=ht,DZ=dz8w          &",
+    "              ,PMID=p_phy,PINT=p8w,TH=th_phy,T=t_phy,EXNER=pi_phy   &",
+    "              ,QV=qv_curr,QCW=qc_curr,QCI=qi_curr,QCS=qs_curr       & !BSF",
+    "              ,QCR=qr_curr,QCG=qg_curr                              & !BSF",
+    "              ,U=u_phy,V=v_phy,RHO=rho                              &",
+    "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &",
+    "              ,QZ0=qz0,UZ0=uz0,VZ0=vz0                              &",
+    "              ,LOWLYR=lowlyr                                        &",
+    "              ,XLAND=xland,SICE=xice,SNOW=snow                      &",
+    "              ,TKE_MYJ=tke_pbl,EXCH_H=exch_h,USTAR=ust,ZNT=znt      &",
+    "              ,EL_MYJ=el_pbl,PBLH=pblh,KPBL=kpbl,CT=ct              &",
+    "              ,AKHS=akhs,AKMS=akms,ELFLX=lh,MIXHT=mixht             &",
+    "              ,RUBLTEN=rublten,RVBLTEN=rvblten,RTHBLTEN=rthblten    &",
+    "              ,RQVBLTEN=rqvblten,RQCBLTEN=rqcblten                  &",
+    "              ,RQIBLTEN=rqiblten,RQSBLTEN=rqsblten                  & !BSF",
+    "              ,RQRBLTEN=rqrblten,RQGBLTEN=rqgblten                  & !BSF",
+    "              ,IDS=ids,IDE=ide,JDS=jds,JDE=jde,KDS=kds,KDE=kde      &",
+    "              ,IMS=ims,IME=ime,JMS=jms,JME=jme,KMS=kms,KME=kme      &",
+    "              ,ITS=its,ITE=ite,JTS=jts,JTE=jte,KTS=kts,KTE=kte      &",
+    "                                                                    )"
+   ],
+   "call_passes_hfx_or_flhc": false,
+   "call_passes_THZ0_and_AKHS": true,
+   "coupling_located": true,
+   "verdict": "Consistente"
+  },
+  "v4.8.0": {
+   "role": "v4 mas reciente",
+   "commit": "06d4240ae989cc3e50af412bb472df3d9048783c",
+   "hits": [
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1029,
+     "text": "      RLOW=PLOW/(R_D*TLOW)"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 840,
+     "text": "      HSFLX=AKHS*(THLOW-THZ0)"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1033,
+     "text": "      HFX=-RLOW*CP*HSFLX"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1036,
+     "text": "      FLHC=RLOW*CP*AKHS"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_surface_driver.F",
+     "line": 2642,
+     "text": "          CALL SLAB(t_phy,qv_curr,p_phy,flhc,flqc,  &"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 325,
+     "text": "         THCON=(P1000mb*0.001/PL)**ROVCP"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 326,
+     "text": "         THX(I)=SCR3(I)*THCON"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 409,
+     "text": "                THG=TSK(I)*(100./PSFC(I))**ROVCP"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 410,
+     "text": "                HFX(I)=FLHC(I)*(THG-THX(I))"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 443,
+     "text": "                HFXT=FLHC(I)*(THG-THX(I))"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 413,
+     "text": "        QS(I)=HFX(I)+QFX(I)*XLV"
+    },
+    {
+     "item": "a",
+     "file": "phys/module_sf_slab.F",
+     "line": 416,
+     "text": "          DTHGDT(I)=(RNET(I)-QS(I))/CAPG(I)-HM(I)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 31,
+     "text": "      REAL,PARAMETER :: CAPA=R_D/CP"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 477,
+     "text": "        THSK(I,J)=TSK(I,J)*(1.E5/PSFC)**CAPA"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 527,
+     "text": "            RHOK(K,I)=PMID(I,KFLIP,J)/(R_D*T(I,KFLIP,J)*               &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 358,
+     "text": "          SEAMASK=XLAND(I,J)-1."
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 541,
+     "text": "          SEAMASK=XLAND(I,J)-1."
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 542,
+     "text": "          THZ0(I,J)=(1.-SEAMASK)*THSK(I,J)+SEAMASK*THZ0(I,J)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 545,
+     "text": "          AKHS_DENS=AKHS(I,J)*RHOK(KTE+1-LLOW,I)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 569,
+     "text": "          SZ0(1)=THZ0(I,J)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 596,
+     "text": "          CALL VDIFH(DTDIF,LMH,NSPECS,NSPECE,LPBL(I,J),SZ0             &  !BSF"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 1505,
+     "text": "        RKSS=RKHS*CLOW(M)"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_bl_myjpbl.F",
+     "line": 1508,
+     "text": "        SPECIES(M,LMH)=(DTOZS*RKSS*SZ0(M)+RSSB)/CMSB"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1481,
+     "text": "             CALL myjpbl(DT=dt,STEPBL=stepbl,HT=ht,DZ=dz8w          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1486,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1509,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1579,
+     "text": "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1492,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh,MIXHT=mixht             &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1516,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh                         &"
+    },
+    {
+     "item": "b",
+     "file": "phys/module_pbl_driver.F",
+     "line": 1585,
+     "text": "              ,AKHS=akhs,AKMS=akms,ELFLX=lh                         &"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 227,
+     "text": "          THSK(I,J)=TSK(I,J)/(PSFC/P1000mb)**CAPA"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 528,
+     "text": "            THZ0=THS"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 656,
+     "text": "        THZ0=THS"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 791,
+     "text": "            AKHS=MAX(USTARK/SIMH,CXCHL)"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 619,
+     "text": "            AKHS=MAX(USTARK/SIMH,CXCHS)"
+    },
+    {
+     "item": "c",
+     "file": "phys/module_sf_myjsfc.F",
+     "line": 1030,
+     "text": "      CHS=AKHS"
+    }
+   ],
+   "myjpbl_uncommented_refs_to_HFX_or_FLHC": [],
+   "pbl_driver_call_line": 1481,
+   "pbl_driver_call_block": [
+    "             CALL myjpbl(DT=dt,STEPBL=stepbl,HT=ht,DZ=dz8w          &",
+    "              ,PMID=p_phy,PINT=p8w,TH=th_phy,T=t_phy,EXNER=pi_phy   &",
+    "              ,QV=qv_curr,QCW=qc_curr,QCI=qi_curr,QCS=qs_curr       & !BSF",
+    "              ,QCR=qr_curr,QCG=qg_curr                              & !BSF",
+    "              ,U=u_phy,V=v_phy,RHO=rho                              &",
+    "              ,TSK=tsk,QSFC=qsfc,CHKLOWQ=chklowq,THZ0=thz0          &",
+    "              ,QZ0=qz0,UZ0=uz0,VZ0=vz0                              &",
+    "              ,LOWLYR=lowlyr                                        &",
+    "              ,XLAND=xland,SICE=xice,SNOW=snow                      &",
+    "              ,TKE_MYJ=tke_pbl,EXCH_H=exch_h,USTAR=ust,ZNT=znt      &",
+    "              ,EL_MYJ=el_pbl,PBLH=pblh,KPBL=kpbl,CT=ct              &",
+    "              ,AKHS=akhs,AKMS=akms,ELFLX=lh,MIXHT=mixht             &",
+    "              ,RUBLTEN=rublten,RVBLTEN=rvblten,RTHBLTEN=rthblten    &",
+    "              ,RQVBLTEN=rqvblten,RQCBLTEN=rqcblten                  &",
+    "              ,RQIBLTEN=rqiblten,RQSBLTEN=rqsblten                  & !BSF",
+    "              ,RQRBLTEN=rqrblten,RQGBLTEN=rqgblten                  & !BSF",
+    "              ,IDS=ids,IDE=ide,JDS=jds,JDE=jde,KDS=kds,KDE=kde      &",
+    "              ,IMS=ims,IME=ime,JMS=jms,JME=jme,KMS=kms,KME=kme      &",
+    "              ,ITS=its,ITE=ite,JTS=jts,JTE=jte,KTS=kts,KTE=kte      &",
+    "                                                                    )"
+   ],
+   "call_passes_hfx_or_flhc": false,
+   "call_passes_THZ0_and_AKHS": true,
+   "coupling_located": true,
+   "verdict": "Consistente"
+  }
+ },
+ "overall": "Consistente",
+ "note": "Lines of the public WRF source (https://github.com/wrf-model/WRF, tags V3.0, V3.6, V3.9.1.1, v4.8.0) matched by r3_t1_h33_wrf.PATTERNS, with file and line number. Recorded so that the verdict can be reproduced without the WRF source; set WRF_SRC to recompute it."
+}

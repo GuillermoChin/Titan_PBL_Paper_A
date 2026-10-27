@@ -1,0 +1,16 @@
+row,column,value,print,source
+Baseline (1D_Huygens_TMN91_5sol),Records,576,576,numbers:flux_comparison_n_records
+Baseline (1D_Huygens_TMN91_5sol),"Max. relative RMS, F↓ (%)",0.1264654046514238,0.1,numbers:flux_comparison_max_rms_rel_F_down_pct
+Baseline (1D_Huygens_TMN91_5sol),"Max. relative RMS, F↑ (%)",0.09419986055481164,0.09,numbers:flux_comparison_max_rms_rel_F_up_pct
+Baseline (1D_Huygens_TMN91_5sol),"Lowest-layer rate, archive (K sol-1)",-0.09339578527511355,-0.093,build/r3/t3_flux_comparison_all.json:summary.heating_layer0_archive_K_per_sol_mean
+Baseline (1D_Huygens_TMN91_5sol),"Lowest-layer rate, this work (K sol-1)",-0.09421097651218907,-0.094,build/r3/t3_flux_comparison_all.json:summary.heating_layer0_titan_K_per_sol_mean
+Baseline (1D_Huygens_baseline_5sol),Records,576,576,numbers:flux_comparison_baseline5sol_n_records
+Baseline (1D_Huygens_baseline_5sol),"Max. relative RMS, F↓ (%)",0.12646538903821858,0.1,numbers:flux_comparison_baseline5sol_max_rms_rel_F_down_pct
+Baseline (1D_Huygens_baseline_5sol),"Max. relative RMS, F↑ (%)",0.09419898646532471,0.09,numbers:flux_comparison_baseline5sol_max_rms_rel_F_up_pct
+Baseline (1D_Huygens_baseline_5sol),"Lowest-layer rate, archive (K sol-1)",-0.09335919545174194,-0.093,build/r3/t3_flux_comparison_all.json:summary.heating_layer0_archive_K_per_sol_mean
+Baseline (1D_Huygens_baseline_5sol),"Lowest-layer rate, this work (K sol-1)",-0.09417301151212211,-0.094,build/r3/t3_flux_comparison_all.json:summary.heating_layer0_titan_K_per_sol_mean
+Suppressed flux (1D_Huygens_0.1flhc_5sol),Records,576,576,numbers:flux_comparison_0p1flhc_n_records
+Suppressed flux (1D_Huygens_0.1flhc_5sol),"Max. relative RMS, F↓ (%)",0.1264217483404799,0.1,numbers:flux_comparison_0p1flhc_max_rms_rel_F_down_pct
+Suppressed flux (1D_Huygens_0.1flhc_5sol),"Max. relative RMS, F↑ (%)",0.0942862074975896,0.09,numbers:flux_comparison_0p1flhc_max_rms_rel_F_up_pct
+Suppressed flux (1D_Huygens_0.1flhc_5sol),"Lowest-layer rate, archive (K sol-1)",-0.09269678509661218,-0.093,build/r3/t3_flux_comparison_all.json:summary.heating_layer0_archive_K_per_sol_mean
+Suppressed flux (1D_Huygens_0.1flhc_5sol),"Lowest-layer rate, this work (K sol-1)",-0.09344750436771643,-0.093,build/r3/t3_flux_comparison_all.json:summary.heating_layer0_titan_K_per_sol_mean

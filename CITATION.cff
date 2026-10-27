@@ -2,19 +2,26 @@ cff-version: 1.2.0
 message: "If you use this software or its outputs, please cite it as below."
 title: "Paper A reproduction package: Radiative Timescale Constraints on Boundary Layer Evolution in Models of Titan"
 abstract: >-
-  Code and outputs reproducing every figure and table of the manuscript
-  "Radiative Timescale Constraints on Boundary Layer Evolution in Models of Titan".
-  A subset of the titan_pbl framework, comprising the configuration subsystem,
-  the vertical grid, the model state and the gray radiation scheme.
+  Code, single source of numbers, figures and tables of the revised version of
+  "Radiative Timescale Constraints on Boundary Layer Evolution in Models of
+  Titan" (Planetary and Space Science, PSS-D-26-00233). It contains a subset of
+  the titan_pbl framework (configuration subsystem, vertical grid, model state
+  and the gray radiation scheme with both surface longwave boundary
+  conditions), the analyses of the archived output of Hartwick et al. (2026)
+  and of Han and Lora (2025) that produce the numbers quoted in the text, and
+  the scripts that regenerate and verify them.
 type: software
 authors:
   - family-names: "Chin-Canche"
     given-names: "Guillermo Adrian"
-    affiliation: "Instituto Tecnológico Superior de Calkiní, Tecnológico Nacional de México"
-    # orcid: "https://orcid.org/0000-0003-2104-6625"
-version: "0.1.0"
-date-released: "2026-08-12"
+    affiliation: "Instituto Tecnológico Superior de Calkiní (ITESCAM), Tecnológico Nacional de México"
+    email: "gcchin@itescam.edu.mx"
+    orcid: "https://orcid.org/0000-0003-2104-6625"
+version: "2.0.0"
+date-released: "2026-10-26"
+doi: "10.5281/zenodo.PENDING"
 license: BSD-3-Clause
+repository-code: "https://github.com/GuillermoChin/Titan_PBL_Paper_A"
 keywords:
   - Titan
   - planetary boundary layer
@@ -22,7 +29,6 @@ keywords:
   - surface energy balance
   - atmospheric modeling
   - Huygens
-# doi: 10.5281/zenodo.21909362
 references:
   - type: article
     authors:
@@ -32,9 +38,10 @@ references:
         given-names: "S. C. R."
       - family-names: "Soto"
         given-names: "A."
-    title: "Modeling Titan's Planetary Boundary Layer at the Huygens Landing Site"
+    title: "Modeling Titan's planetary boundary layer at the Huygens landing site: evidence for the role of subsurface methane evaporation in limiting convective growth"
     journal: "The Planetary Science Journal"
     volume: 7
+    start: 178
     year: 2026
     doi: "10.3847/PSJ/ae809d"
   - type: dataset
@@ -48,3 +55,28 @@ references:
     title: "Simulation archive for Modeling Titan's Planetary Boundary Layer"
     year: 2026
     doi: "10.5281/zenodo.17246644"
+  - type: article
+    authors:
+      - family-names: "Han"
+        given-names: "Sooman"
+      - family-names: "Lora"
+        given-names: "J. M."
+    title: "Thermal inertia controls on Titan's surface temperature and planetary boundary layer structure"
+    journal: "The Planetary Science Journal"
+    volume: 6
+    start: 222
+    year: 2025
+  - type: dataset
+    authors:
+      - family-names: "Han"
+        given-names: "Sooman"
+      - family-names: "Lora"
+        given-names: "J. M."
+    title: "Archived Titan Atmospheric Model output of Han and Lora (2025), version 2"
+    year: 2025
+    doi: "10.5281/zenodo.16791001"
+  - type: dataset
+    authors:
+      - name: "NASA Planetary Data System"
+    title: "Huygens HASI Level 4 atmospheric descent profile"
+    doi: "10.17189/bcm3-4061"

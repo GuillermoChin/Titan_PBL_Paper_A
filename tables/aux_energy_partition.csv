@@ -1,0 +1,221 @@
+source,run,period,period_index,variable,value,units
+mtWRF,TMN91,Tsol 2,2,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,GLW,5.482867660369764,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,U,5.545578486843232,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,EMIS,5.545581723554988,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,XINET,-0.06271402426633711,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,R_O1,0.27414338301848845,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,HFX,0.6965811776912636,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,LH,0.0,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,G_residual,0.026925474864094363,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,SOILCOND,-9.441355633157192,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 2,2,R_O1_over_HFX,0.3935555421223187,-
+mtWRF,TMN91,Tsol 3,3,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,GLW,5.487878644718196,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,U,5.550241554554557,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,EMIS,5.550244913246534,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,XINET,-0.06236621332838801,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,R_O1,0.27439393223591,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,HFX,0.6863060783489786,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,LH,0.0,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,G_residual,0.037548385144328233,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,SOILCOND,-0.25878215279800704,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 3,3,R_O1_over_HFX,0.39981276706161406,-
+mtWRF,TMN91,Tsol 4,4,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,GLW,5.4925873346843135,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,U,5.555443883560284,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,EMIS,5.555446911024761,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,XINET,-0.06285952701238971,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,R_O1,0.274629366734216,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,HFX,0.6795622408873354,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,LH,0.0,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,G_residual,0.04379890892196999,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,SOILCOND,-0.2621612322039493,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 4,4,R_O1_over_HFX,0.40412687787894147,-
+mtWRF,TMN91,Tsol 5,5,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,GLW,5.496878178465981,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,U,5.560052440509604,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,EMIS,5.560055506799709,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,XINET,-0.06317726685713282,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,R_O1,0.27484390892329935,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,HFX,0.6751789943718258,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,LH,0.0,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,G_residual,0.047864415592736465,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,SOILCOND,-0.23929926527541906,MJ m-2 per Tsol
+mtWRF,TMN91,Tsol 5,5,R_O1_over_HFX,0.4070682163016773,-
+mtWRF,baseline5sol,Tsol 2,2,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,GLW,5.4832593272869445,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,U,5.5467790096696215,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,EMIS,5.546783148259806,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,XINET,-0.06352374474681766,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,R_O1,0.2741629663643475,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,HFX,0.7129593971499144,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,LH,0.0,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,G_residual,0.00973753492496299,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,SOILCOND,-0.17486362015917606,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 2,2,R_O1_over_HFX,0.3845421877603769,-
+mtWRF,baseline5sol,Tsol 3,3,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,GLW,5.488561498343118,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,U,5.5518295326518885,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,EMIS,5.55183332825883,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,XINET,-0.06327176753778399,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,R_O1,0.2744280749171561,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,HFX,0.7026584923808397,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,LH,0.0,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,G_residual,0.020290416903071335,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,SOILCOND,-0.27981741048671177,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 3,3,R_O1_over_HFX,0.3905568322205897,-
+mtWRF,baseline5sol,Tsol 4,4,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,GLW,5.49353682014568,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,U,5.557294346654494,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,EMIS,5.557296126159446,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,XINET,-0.06375926353798816,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,R_O1,0.2746768410072842,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,HFX,0.6964588123617318,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,LH,0.0,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,G_residual,0.026002600921975164,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,SOILCOND,-0.2744116426620191,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 4,4,R_O1_over_HFX,0.39439064612570446,-
+mtWRF,baseline5sol,Tsol 5,5,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,GLW,5.498081112906023,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,U,5.562220612653362,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,EMIS,5.562225029937854,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,XINET,-0.06414383741857521,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,R_O1,0.27490405564530135,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,HFX,0.6913215857435393,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,LH,0.0,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,G_residual,0.030755253659580577,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,SOILCOND,-0.25639718025618624,MJ m-2 per Tsol
+mtWRF,baseline5sol,Tsol 5,5,R_O1_over_HFX,0.3976500391632252,-
+mtWRF,0.1flhc,Tsol 2,2,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,GLW,5.550785220954165,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,U,5.660927274588578,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,EMIS,5.660960203124619,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,XINET,-0.11017443213645667,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,R_O1,0.27753926104770843,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,HFX,0.39783567466590436,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,LH,0.0,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,G_residual,0.27821057001933397,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,SOILCOND,-15.975933807612956,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 2,2,R_O1_over_HFX,0.6976228596914572,-
+mtWRF,0.1flhc,Tsol 3,3,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,GLW,5.59561907582261,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,U,5.703855228688843,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,EMIS,5.703882085060313,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,XINET,-0.10826256317609044,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,R_O1,0.2797809537911307,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,HFX,0.3835964143648386,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,LH,0.0,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,G_residual,0.2943616992807659,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,SOILCOND,-2.133706839532975,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 3,3,R_O1_over_HFX,0.729362797236762,-
+mtWRF,0.1flhc,Tsol 4,4,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,GLW,5.633676403631831,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,U,5.7401677346246,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,EMIS,5.74019055289437,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,XINET,-0.1065137742003932,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,R_O1,0.2816838201815918,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,HFX,0.37731789272365557,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,LH,0.0,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,G_residual,0.30238900989764617,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,SOILCOND,-1.7970578174227094,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 4,4,R_O1_over_HFX,0.746542439713811,-
+mtWRF,0.1flhc,Tsol 5,5,GSW,0.786220676821695,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,GLW,5.667909212438673,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,U,5.7720460879335445,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,EMIS,5.772067646596176,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,XINET,-0.10415807369857946,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,R_O1,0.2833954606219339,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,HFX,0.37303011729762137,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,LH,0.0,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,G_residual,0.3090324858254941,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,SOILCOND,-1.5920278761122453,MJ m-2 per Tsol
+mtWRF,0.1flhc,Tsol 5,5,R_O1_over_HFX,0.7597120111238294,-
+TAM,case1_huygens,30 central days (k=10..39),,sw_sfc,0.5029967832244181,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,30 central days (k=10..39),,lwdn_sfc,6.051069611805222,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,30 central days (k=10..39),,lwup_sfc,6.398420517882274,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,30 central days (k=10..39),,sens,0.42362959857740573,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,30 central days (k=10..39),,hf,0.006116651189062705,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,30 central days (k=10..39),,R_O1_equiv,0.04617539897002221,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_conditional,0.04617539897002221,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_eps095_balance,0.30255348059026144,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,30 central days (k=10..39),,R_O1_equiv_over_sens,0.1089994635055818,-
+TAM,case1_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_conditional_over_sens,0.1089994635055818,- (conditional)
+TAM,case1_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_eps095_balance_over_sens,0.7141934406997739,"- (conditional, read from the balance)"
+TAM,case1_huygens,50 days,,sw_sfc,0.5026486275392625,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,50 days,,lwdn_sfc,6.051742246797388,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,50 days,,lwup_sfc,6.399044398453401,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,50 days,,sens,0.42260692419883655,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,50 days,,hf,0.006584727726683925,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,50 days,,R_O1_equiv,0.046180531812828024,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,50 days,,R_O1_equiv_if_O_conditional,0.046180531812828024,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,50 days,,R_O1_equiv_if_O_eps095_balance,0.30258711233986973,MJ m-2 per Titan day (mean over the days)
+TAM,case1_huygens,50 days,,R_O1_equiv_over_sens,0.10927537900704173,-
+TAM,case1_huygens,50 days,,R_O1_equiv_if_O_conditional_over_sens,0.10927537900704173,- (conditional)
+TAM,case1_huygens,50 days,,R_O1_equiv_if_O_eps095_balance_over_sens,0.7160013123625549,"- (conditional, read from the balance)"
+TAM,case2_huygens,30 central days (k=10..39),,sw_sfc,0.5030223051692911,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,30 central days (k=10..39),,lwdn_sfc,6.05101058889093,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,30 central days (k=10..39),,lwup_sfc,6.400333916244846,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,30 central days (k=10..39),,sens,0.41118679587225226,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,30 central days (k=10..39),,hf,0.01683828881472927,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_conditional,0.04540845529530295,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_eps095_balance,0.30255052944454675,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,30 central days (k=10..39),,R_O1_equiv,not determinable,
+TAM,case2_huygens,30 central days (k=10..39),,R_O1_equiv_over_sens,not determinable,-
+TAM,case2_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_conditional_over_sens,0.11043266892599944,- (conditional)
+TAM,case2_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_eps095_balance_over_sens,0.7357982612324528,"- (conditional, read from the balance)"
+TAM,case2_huygens,50 days,,sw_sfc,0.5026819911657798,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,50 days,,lwdn_sfc,6.0518226120540355,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,50 days,,lwup_sfc,6.401185625509863,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,50 days,,sens,0.41133817182536503,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,50 days,,hf,0.016358207584229005,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,50 days,,R_O1_equiv_if_O_conditional,0.04541454894147313,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,50 days,,R_O1_equiv_if_O_eps095_balance,0.30259113060270215,MJ m-2 per Titan day (mean over the days)
+TAM,case2_huygens,50 days,,R_O1_equiv,not determinable,
+TAM,case2_huygens,50 days,,R_O1_equiv_over_sens,not determinable,-
+TAM,case2_huygens,50 days,,R_O1_equiv_if_O_conditional_over_sens,0.11040684296315204,- (conditional)
+TAM,case2_huygens,50 days,,R_O1_equiv_if_O_eps095_balance_over_sens,0.735626186259145,"- (conditional, read from the balance)"
+TAM,case3_huygens,30 central days (k=10..39),,sw_sfc,0.5030882689793401,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,30 central days (k=10..39),,lwdn_sfc,6.034590060944853,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,30 central days (k=10..39),,lwup_sfc,6.39950382050128,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,30 central days (k=10..39),,sens,0.37887411494221135,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,30 central days (k=10..39),,hf,0.03025618701481435,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_conditional,0.04840099321127753,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_eps095_balance,0.30172950304724294,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,30 central days (k=10..39),,R_O1_equiv,not determinable,
+TAM,case3_huygens,30 central days (k=10..39),,R_O1_equiv_over_sens,not determinable,-
+TAM,case3_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_conditional_over_sens,0.1277495381775026,- (conditional)
+TAM,case3_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_eps095_balance_over_sens,0.7963845803856643,"- (conditional, read from the balance)"
+TAM,case3_huygens,50 days,,sw_sfc,0.5027417196626369,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,50 days,,lwdn_sfc,6.0347581984887855,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,50 days,,lwup_sfc,6.401659350846006,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,50 days,,sens,0.37249281602666434,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,50 days,,hf,0.035389483099653604,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,50 days,,R_O1_equiv_if_O_conditional,0.04840234177415261,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,50 days,,R_O1_equiv_if_O_eps095_balance,0.30173790992443955,MJ m-2 per Titan day (mean over the days)
+TAM,case3_huygens,50 days,,R_O1_equiv,not determinable,
+TAM,case3_huygens,50 days,,R_O1_equiv_over_sens,not determinable,-
+TAM,case3_huygens,50 days,,R_O1_equiv_if_O_conditional_over_sens,0.12994167858176303,- (conditional)
+TAM,case3_huygens,50 days,,R_O1_equiv_if_O_eps095_balance_over_sens,0.810050280010877,"- (conditional, read from the balance)"
+TAM,case4_huygens,30 central days (k=10..39),,sw_sfc,0.5030066574865574,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,30 central days (k=10..39),,lwdn_sfc,6.0558210824135985,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,30 central days (k=10..39),,lwup_sfc,6.408705840041179,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,30 central days (k=10..39),,sens,0.40458410286768526,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,30 central days (k=10..39),,hf,0.01938328103990717,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_conditional,0.04604775716120433,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_eps095_balance,0.30279105412068014,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,30 central days (k=10..39),,R_O1_equiv,not determinable,
+TAM,case4_huygens,30 central days (k=10..39),,R_O1_equiv_over_sens,not determinable,-
+TAM,case4_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_conditional_over_sens,0.11381504323778074,- (conditional)
+TAM,case4_huygens,30 central days (k=10..39),,R_O1_equiv_if_O_eps095_balance_over_sens,0.7484007700117288,"- (conditional, read from the balance)"
+TAM,case4_huygens,50 days,,sw_sfc,0.5026612541102174,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,50 days,,lwdn_sfc,6.056557278612782,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,50 days,,lwup_sfc,6.409548853926756,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,50 days,,sens,0.4046985129471541,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,50 days,,hf,0.019094241115242674,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,50 days,,R_O1_equiv_if_O_conditional,0.046053355111233166,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,50 days,,R_O1_equiv_if_O_eps095_balance,0.3028278639306394,MJ m-2 per Titan day (mean over the days)
+TAM,case4_huygens,50 days,,R_O1_equiv,not determinable,
+TAM,case4_huygens,50 days,,R_O1_equiv_over_sens,not determinable,-
+TAM,case4_huygens,50 days,,R_O1_equiv_if_O_conditional_over_sens,0.11379669961190803,- (conditional)
+TAM,case4_huygens,50 days,,R_O1_equiv_if_O_eps095_balance_over_sens,0.7482801498956407,"- (conditional, read from the balance)"

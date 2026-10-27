@@ -409,6 +409,17 @@ class RadiationConfig(_Base):
     surface_emissivity: Fraction = Field(
         description="Surface emissivity epsilon [dimensionless]"
     )
+    surface_lw_boundary: Literal["full_absorption", "kirchhoff"] = Field(
+        default="full_absorption",
+        description=(
+            "Treatment of the downward longwave flux at the surface. "
+            "'full_absorption': the surface absorbs all of LW_down and emits "
+            "eps*sigma*Ts^4, so F_up(0) omits the reflected part (Equation 2 "
+            "of Hartwick et al. 2026, and the mtWRF archive). 'kirchhoff': "
+            "the surface absorbs eps*LW_down and reflects (1-eps)*LW_down, so "
+            "F_up(0) = eps*sigma*Ts^4 + (1-eps)*F_down(0). See H-27"
+        ),
+    )
     optical_depth_visible: NonNegativeFloat = Field(
         description="Visible optical depth tau_vis [dimensionless]"
     )

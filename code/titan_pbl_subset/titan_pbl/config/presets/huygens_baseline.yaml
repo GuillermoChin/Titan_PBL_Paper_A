@@ -118,7 +118,7 @@ subsurface:
   # residual "en la capa de subsuelo mas somera", que son justamente los dos
   # terminos del balance de la temperatura de piel. Tratarlas como variables
   # independientes duplica la capacidad calorifica Cv*dz0 y desacopla el
-  # balance. Ver H-18 en docs/HALLAZGOS.md.
+  # balance. Ver H-18.
   surface_coupling: "skin_is_top_layer"  # skin_is_top_layer | separate_skin
   interface_averaging: "harmonic"     # harmonic | arithmetic | geometric
   geothermal_flux: 0.0                # [W m-2] no parametrizado en el paper
@@ -199,6 +199,7 @@ radiation:
   ir_top_flux: 2.0                    # [W m-2] I_IR descendente en el tope
   surface_albedo: 0.30                # alpha (Ec. 2 / Ec. A9)
   surface_emissivity: 0.95            # epsilon (Ec. 2 / Ec. A14)
+  surface_lw_boundary: "full_absorption"  # full_absorption | kirchhoff (frontera LW inferior, H-27)
   # -------------------------------------------------------------------------
   # tau_vis = 8, NO el 10 que aparece en el texto de Hartwick et al. (2026).
   #
@@ -248,7 +249,7 @@ surface_layer:
   # ln(z/z0) = 2.60. Bajo inestabilidad fuerte psi_m alcanza 2.55 y el
   # denominador de similitud casi se anula, haciendo divergir el coeficiente
   # de intercambio. Se acota el denominador a una fraccion de su valor neutro.
-  # Ver H-13 en docs/HALLAZGOS.md.
+  # Ver H-13.
   # Con psi_H del orden de 30 W/m2/K y una capacidad areal de 19941 J/m2/K,
   # el tiempo de relajacion superficie-aire cae a ~700 s, por debajo del paso
   # de 954 s. Un avance explicito produce oscilacion de relajacion. Ver H-19.
@@ -292,7 +293,7 @@ turbulence:
   stability_limit_unstable: -0.28     # cota inferior de G_H
   # La produccion por flotabilidad alimenta K_h, que alimenta la produccion.
   # Con disipacion explicita ese lazo sobrepasa a dt = 954 s y la ECT diverge.
-  # Ver H-20 en docs/HALLAZGOS.md.
+  # Ver H-20.
   tke_maximum: 10.0                   # [m2 s-2] techo numerico
   implicit_dissipation: true
   include_tke_transport: true
