@@ -106,10 +106,10 @@ SECTION_RULES = [
     (r"^(hasi_|robust_|corner_|worstcase)", "§3.5 Sensitivity and uncertainty"),
     (r"^flux_comparison", "§3.6 Comparison with archived output"),
     (r"^archive_contrast", "§4.1 Verified contrasts"),
-    (r"^archive_", "§5.1 The experiment and the proposed mechanism"),
-    (r"^mayor3_", "§5.2–5.3 Radiative heating and static stability"),
+    (r"^(archive_|sec5_dTSK)", "§5.1 The experiment and the proposed mechanism"),
+    (r"^(mayor3_|sec5_S1km)", "§5.2–5.3 Radiative heating and static stability"),
     (r"^(colenergy_|h33_|mtwrf_)", "§5.4 Column energy closure"),
-    (r"^(energy_archive|energy_tam)", "§5.5 Implications for comparing mtWRF and TAM"),
+    (r"^(energy_archive|energy_tam|sec5_tau1)", "§5.5 Implications for comparing mtWRF and TAM"),
     (r"^sweep_", "Other (parameter sweep of the original submission)"),
 ]
 SECTION_ORDER = [s for _, s in SECTION_RULES if not s.startswith("Other")] + [
@@ -202,6 +202,15 @@ def propose(e: dict) -> tuple[str, str]:
     if isinstance(v, int) and not isinstance(v, bool) and ("record" in units):
         return str(v), "exact count"
     x = float(v)
+    if k == "sec5_dTSK_end_sol5":
+        return fmt_sig(x, 2), ("2 significant figures: archive reading, given to 0.01 K like the maximum "
+                               "skin-temperature difference quoted with it")
+    if k == "sec5_S1km_oscillation_halfamp":
+        return fmt_sig(x, 1), ("1 significant figure: size of an oscillation, quoted only against the net "
+                               "stability change it is compared with")
+    if k == "sec5_tau1_height":
+        return fmt_dec(x, 1), ("0.1 km: the grid layer that contains this height is about 0.1 km thick, so "
+                               "finer digits only reflect the linear interpolation")
     if re.match(r"^(tau_rad|taurad)", k):
         return fmt_sig(x, 2), "2 significant figures: T = 93 K (2 figures) is the least precise input of the timescale"
     if k == "titan_year_earth_years":

@@ -258,6 +258,7 @@ Rounding rule: no printed number carries more precision than its uncertainty or 
 | `archive_hfx_peak_suppressed_sol3` | r1 | 1.057593759344443 |  | W m-2 | 1.06 | archive reading; 3 significant figures as in the original submission | valid |
 | `archive_hfx_reduction_sol3` | r1 | 41.01752029787142 |  | % | 41 | percentage of archive readings: 2 significant figures | valid |
 | `archive_pbl_drift_suppressed_sols2to5` | r1 | 55.29752436843953 |  | % | 55 | percentage of archive readings: 2 significant figures | valid |
+| `sec5_dTSK_end_sol5` | r2 | 0.7894422895773374 |  | K | 0.79 | 2 significant figures: archive reading, given to 0.01 K like the maximum skin-temperature difference quoted with it | valid |
 
 ## §5.2–5.3 Radiative heating and static stability
 
@@ -282,6 +283,7 @@ Rounding rule: no printed number carries more precision than its uncertainty or 
 | `mayor3_mass_weighted_0_1km_dLW_emis_kirchhoff` | r2 | 0.01727041546370604 |  | K per Titan sol | 0.017 | 2 significant figures: rates; eps with 2 figures | valid |
 | `mayor3_slope_0_1km_dLW_emis_kirchhoff` | r2 | -0.017063147497711886 |  | K per Titan sol per km | -0.017 | 2 significant figures: rates; eps with 2 figures | valid |
 | `mayor3_verdict_primary` | r2 | depends on z_ref |  | text | depends on z_ref | text: not numerical | valid |
+| `sec5_S1km_oscillation_halfamp` | r2 | 0.02255254625298516 |  | K | 0.02 | 1 significant figure: size of an oscillation, quoted only against the net stability change it is compared with | valid |
 
 ## §5.4 Column energy closure
 
@@ -320,6 +322,7 @@ Rounding rule: no printed number carries more precision than its uncertainty or 
 
 | key | stage | full value | ± | units | print | rationale | status |
 |---|---|---|---|---|---|---|---|
+| `sec5_tau1_height` | r2 | 1.1592869677884206 |  | km | 1.2 | 0.1 km: the grid layer that contains this height is about 0.1 km thick, so finer digits only reflect the linear interpolation | valid |
 | `energy_archive_HFX_sol2_TMN91` | r2 | 0.6965811776912636 |  | MJ m-2 per Tsol | 0.70 | integrals per sol: 2 significant figures | valid |
 | `energy_archive_R_O1_sol2_TMN91` | r2 | 0.27414338301848845 |  | MJ m-2 per Tsol | 0.27 | integrals per sol: 2 significant figures | valid |
 | `energy_archive_R_O1_over_HFX_sol2_TMN91` | r2 | 0.3935555421223187 |  | - | 0.39 | default rule: 2 significant figures | valid |

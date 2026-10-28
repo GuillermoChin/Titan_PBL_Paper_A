@@ -76,6 +76,22 @@ CRITERIOS Y METODO (declarados antes de ejecutar)
 10. Presupuesto en energia por capa: dE_X = cp dp/g (dT_X/dt) integrado por
     sol, X = LW, total, residuo, en J m-2 sol-1 (diferencia supr - base,
     media de los Tsols 2-5).
+11. Three values of Section 5 (added in R4B), staged with the prefix "sec5_":
+    - sec5_dTSK_end_sol5: TSK(0.1flhc) - TSK(TMN91) at the last record of
+      sol 5 (record 662), in K.
+    - sec5_S1km_oscillation_halfamp: half-amplitude of the within-sol
+      oscillation of the total stability difference at z_ref = 1 km, i.e. of
+      dS_tot(t) = cumulative time integral of [dS/dt(0.1flhc) - dS/dt(TMN91)]
+      with S = theta(1 km) - theta(z_1) (the "total" curve of Figure 6a).
+      Statistic: for each sol 2-5 (records of SOL_INDICES), (max - min)/2 of
+      dS_tot within that sol; the value staged is the MAXIMUM over the four
+      sols; the MEDIAN over the sols and the per-sol values are given in the
+      note and in t3_summary.json ("sec5").
+    - sec5_tau1_height: height above the surface, in km, at which the
+      infrared optical depth accumulated from the surface, tau(p_s) - tau(p),
+      reaches 1, with the preset huygens_baseline on its 56-layer grid and the
+      HASI initial state (heights from state.geopotential_heights); linear
+      interpolation in height between the two bracketing interfaces.
 
 Salidas: build/r2/t3_run_pairing.csv, t3_tendency_profiles.csv,
 t3_attribution.csv, t3_stability_budget.csv, t3_summary.json, quicklook/t3_*.png
@@ -105,6 +121,8 @@ import numpy as np  # noqa: E402
 
 import r2_common as C  # noqa: E402
 from titan_pbl.config import load_config  # noqa: E402
+from titan_pbl.core import build_grid, initialize_state  # noqa: E402
+from titan_pbl.schemes.radiation import GrayRadiation  # noqa: E402
 
 R_GAS = 296.8
 CP = 1101.0
@@ -294,6 +312,36 @@ def offline_attribution(rec, base: dict, supp: dict, boundary: str, sol: float) 
 # ---------------------------------------------------------------------------
 # Principal
 # ---------------------------------------------------------------------------
+
+def sec5_values(runs: dict, tend: dict, dt: float) -> dict:
+    """Three values of Section 5 (docstring, item 11)."""
+    i_end = 662 - (FIRST - 1)  # registro 662 en el bloque cargado (FIRST - 1 .. LAST)
+    d_tsk = float(runs["0.1flhc"]["TSK"][i_end] - runs["TMN91"]["TSK"][i_end])
+    rs, rb = stability_rates(tend["0.1flhc"], 1000.0), stability_rates(tend["TMN91"], 1000.0)
+    cum = np.cumsum(rs["th_tot"] - rb["th_tot"]) * dt  # curva "total" de la Figura 6a
+    half = {}
+    for sol_k, (a, bnd) in SOL_INDICES.items():
+        seg = cum[a - FIRST:bnd - FIRST]
+        half[sol_k] = float((seg.max() - seg.min()) / 2.0)
+    config = load_config("huygens_baseline")
+    state = initialize_state(config, build_grid(config))
+    scheme = GrayRadiation(config)
+    scheme.initialize(config, state)
+    tau = scheme.infrared_optical_depth(state)  # interfaces, indice 0 = superficie
+    z_int, _ = state.geopotential_heights()
+    tau_up = tau[0] - tau  # profundidad optica acumulada desde la superficie
+    k = int(np.argmax(tau_up >= 1.0))
+    z1 = z_int[k - 1] + (1.0 - tau_up[k - 1]) / (tau_up[k] - tau_up[k - 1]) * (z_int[k] - z_int[k - 1])
+    return {
+        "dTSK_end_sol5_K": d_tsk, "dTSK_record": 662, "dTSK_time": runs["TMN91"]["Times"][i_end],
+        "S1km_halfamp_per_sol_K": {str(s): v for s, v in half.items()},
+        "S1km_halfamp_max_K": max(half.values()),
+        "S1km_halfamp_median_K": float(np.median(list(half.values()))),
+        "tau1_height_km": float(z1 / 1000.0),
+        "tau1_bracketing_interfaces_m": [float(z_int[k - 1]), float(z_int[k])],
+        "n_layers": int(tau.size - 1), "tau_ir_surface": float(tau[0]),
+    }
+
 
 def main() -> int:
     C.R2_OUT.mkdir(parents=True, exist_ok=True)
@@ -609,6 +657,9 @@ def main() -> int:
         "energy_budget": {p: {k: v for k, v in e.items() if k != "per_layer_J_m2_per_sol"} for p, e in energy.items()},
         "z_mean_lowest_levels_m": z_ref_profile[:12].tolist(),
     }
+    # 11. Tres valores de la Seccion 5 (R4B) ---------------------------------
+    sec5 = sec5_values(runs, tend, dt)
+    summary["sec5"] = sec5
     C.dump_json(C.R2_OUT / "t3_summary.json", summary)
     C.dump_json(C.R2_OUT / "t3_energy_per_layer.json", energy)
 
@@ -636,7 +687,22 @@ def main() -> int:
                             vertical[p]["todo"][f"slope_dLW_emis_{boundary}_K_per_sol_per_km"], "K per Titan sol per km",
                             boundary, "n/a (solo LW)", src, fn, 2, "pendiente de minimos cuadrados 0-1 km"))
     nums.append(C.entry("mayor3_verdict_primary", agg[p], "texto", "n/a", "n/a", src, fn, None, "veredicto segun criterio declarado"))
-    C.update_numbers_r2(nums, "mayor3_", fn)
+    e = C.entry("sec5_dTSK_end_sol5", sec5["dTSK_end_sol5_K"], "K", "n/a (archivo)", "n/a", src, fn, 2,
+                "archive reading")
+    e["note"] = f"TSK(0.1flhc) - TSK(TMN91) at record {sec5['dTSK_record']} ({sec5['dTSK_time']}), last record of sol 5"
+    nums.append(e)
+    e = C.entry("sec5_S1km_oscillation_halfamp", sec5["S1km_halfamp_max_K"], "K", "n/a (archivo)", "n/a", src, fn, 1,
+                "amplitude of an oscillation")
+    per_sol = ", ".join(f"sol {s}: {v:.4g}" for s, v in sec5["S1km_halfamp_per_sol_K"].items())
+    e["note"] = ("max over sols 2-5 of (max - min)/2 within each sol of the cumulative total stability difference "
+                 f"at 1 km (Figure 6a); median over sols = {sec5['S1km_halfamp_median_K']:.4g} K; {per_sol} K")
+    nums.append(e)
+    e = C.entry("sec5_tau1_height", sec5["tau1_height_km"], "km", "n/a", "n/a", src, fn, 2,
+                "grid geometry")
+    e["note"] = ("height where the infrared optical depth accumulated from the surface reaches 1 "
+                 f"(preset huygens_baseline, {sec5['n_layers']} layers, HASI initial state; interpolated in height)")
+    nums.append(e)
+    C.update_numbers_r2(nums, ("mayor3_", "sec5_"), fn)
 
     # Graficas de inspeccion
     import matplotlib
