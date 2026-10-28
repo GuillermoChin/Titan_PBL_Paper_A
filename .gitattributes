@@ -1,0 +1,19 @@
+# Source and documentation: normalized to LF in the repository and in checkouts.
+* text=auto eol=lf
+
+# Released outputs: stored byte for byte. Their SHA-256 are listed in
+# PROVENANCE.md and checked by code/audit_paper_A_numbers.py, so no
+# line-ending conversion may touch them.
+numbers/** -text
+figures/** -text
+tables/** -text
+# PDS product (HASI Level 4), kept as distributed.
+code/titan_pbl_subset/titan_pbl/data/** -text
+
+# Binary formats
+*.pdf binary
+*.png binary
+*.tif binary
+*.tiff binary
+*.eps binary
+*.nc binary

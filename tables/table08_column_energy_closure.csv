@@ -1,0 +1,16 @@
+row,column,value,print,source
+Baseline (1D_Huygens_TMN91_5sol),Median HFX/F_MYJ,1.000355975525732,1.00,numbers:h33_median_r_TMN91
+Baseline (1D_Huygens_TMN91_5sol),∫HFX dt (MJ m-2),2.7376284912994033,2.7,numbers:h33_int_HFX_TMN91
+Baseline (1D_Huygens_TMN91_5sol),∫F_MYJ dt (MJ m-2),2.7364528888050947,2.7,numbers:h33_int_FMYJ_TMN91
+Baseline (1D_Huygens_TMN91_5sol),Residual with HFX (MJ m-2),0.19089856305498953,0.2,numbers:h33_colresid_HFX_TMN91
+Baseline (1D_Huygens_TMN91_5sol),Residual with F_MYJ (MJ m-2),0.19207416554929813,0.2,numbers:h33_colresid_FMYJ_TMN91
+Baseline (1D_Huygens_baseline_5sol),Median HFX/F_MYJ,1.0003558383311553,1.00,numbers:h33_median_r_baseline5sol
+Baseline (1D_Huygens_baseline_5sol),∫HFX dt (MJ m-2),2.8033982876360253,2.8,numbers:h33_int_HFX_baseline5sol
+Baseline (1D_Huygens_baseline_5sol),∫F_MYJ dt (MJ m-2),2.8021698712147156,2.8,numbers:h33_int_FMYJ_baseline5sol
+Baseline (1D_Huygens_baseline_5sol),Residual with HFX (MJ m-2),0.1954880308735769,0.2,numbers:h33_colresid_HFX_baseline5sol
+Baseline (1D_Huygens_baseline_5sol),Residual with F_MYJ (MJ m-2),0.19671644729488658,0.2,numbers:h33_colresid_FMYJ_baseline5sol
+Suppressed flux (1D_Huygens_0.1flhc_5sol),Median HFX/F_MYJ,0.10000788178156389,0.100,numbers:h33_median_r_0p1flhc
+Suppressed flux (1D_Huygens_0.1flhc_5sol),∫HFX dt (MJ m-2),1.53178009905202,1.5,numbers:h33_int_HFX_0p1flhc
+Suppressed flux (1D_Huygens_0.1flhc_5sol),∫F_MYJ dt (MJ m-2),15.316267751694275,15.3,numbers:h33_int_FMYJ_0p1flhc
+Suppressed flux (1D_Huygens_0.1flhc_5sol),Residual with HFX (MJ m-2),14.592683416077447,14.6,numbers:h33_colresid_HFX_0p1flhc
+Suppressed flux (1D_Huygens_0.1flhc_5sol),Residual with F_MYJ (MJ m-2),0.8081957634351937,0.8,numbers:h33_colresid_FMYJ_0p1flhc

@@ -1,0 +1,31 @@
+row,column,value,print,source
+"Kirchhoff-consistent, shortwave none",Heating threshold (K),1.389851915670317,1.4,numbers:threshold_heating_layer0_kirchhoff_lw
+"Kirchhoff-consistent, shortwave none",Destabilization threshold (K),1.3571841581151889,1.4,numbers:threshold_destabilisation_0_4km_kirchhoff_lw
+"Kirchhoff-consistent, shortwave none",ΔT_req(4) (K),5.4266987603900425,5.4,numbers:dTreq_4sol_kirchhoff_lw
+"Kirchhoff-consistent, shortwave none",ΔT_req(5) (K),4.652757933515481,4.7,numbers:dTreq_5sol_kirchhoff_lw
+"Kirchhoff-consistent, shortwave none",t_mix at 3 K (sols),10.295646030939984,10,numbers:mixing_time_3K_kirchhoff_lw
+"Kirchhoff-consistent, shortwave noon",Heating threshold (K),1.0538366298721022,1.1,numbers:threshold_heating_layer0_kirchhoff_noon
+"Kirchhoff-consistent, shortwave noon",Destabilization threshold (K),1.4475296154111617,1.4,numbers:threshold_destabilisation_0_4km_kirchhoff_noon
+"Kirchhoff-consistent, shortwave noon",ΔT_req(4) (K),5.5063279366577005,5.5,numbers:dTreq_4sol_kirchhoff_noon
+"Kirchhoff-consistent, shortwave noon",ΔT_req(5) (K),4.734289411117734,4.7,numbers:dTreq_5sol_kirchhoff_noon
+"Kirchhoff-consistent, shortwave noon",t_mix at 3 K (sols),10.879410626776902,11,numbers:mixing_time_3K_kirchhoff_noon
+"Kirchhoff-consistent, shortwave diurnal mean",Heating threshold (K),1.2975650031824475,1.3,numbers:threshold_heating_layer0_kirchhoff_diurnal
+"Kirchhoff-consistent, shortwave diurnal mean",Destabilization threshold (K),1.382149696611422,1.4,numbers:threshold_destabilisation_0_4km_kirchhoff_diurnal
+"Kirchhoff-consistent, shortwave diurnal mean",ΔT_req(4) (K),5.448699486779932,5.4,numbers:dTreq_4sol_kirchhoff_diurnal
+"Kirchhoff-consistent, shortwave diurnal mean",ΔT_req(5) (K),4.675284877956714,4.7,numbers:dTreq_5sol_kirchhoff_diurnal
+"Kirchhoff-consistent, shortwave diurnal mean",t_mix at 3 K (sols),10.450438879009463,10,numbers:mixing_time_3K_kirchhoff_diurnal
+"Full absorption, shortwave none",Heating threshold (K),2.4790813332314077,2.5,numbers:threshold_heating_layer0_full_absorption_lw
+"Full absorption, shortwave none",Destabilization threshold (K),2.4475179605492094,2.4,numbers:threshold_destabilisation_0_4km_full_absorption_lw
+"Full absorption, shortwave none",ΔT_req(4) (K),6.390031677639726,6.4,numbers:dTreq_4sol_full_absorption_lw
+"Full absorption, shortwave none",ΔT_req(5) (K),5.638687213872678,5.6,numbers:dTreq_5sol_full_absorption_lw
+"Full absorption, shortwave none",t_mix at 3 K (sols),30.096980536829207,30,numbers:mixing_time_3K_full_absorption_lw
+"Full absorption, shortwave noon",Heating threshold (K),2.1544959919766264,2.2,numbers:threshold_heating_layer0_full_absorption_noon
+"Full absorption, shortwave noon",Destabilization threshold (K),2.5348127243821943,2.5,numbers:threshold_destabilisation_0_4km_full_absorption_noon
+"Full absorption, shortwave noon",ΔT_req(4) (K),6.467374719761649,6.5,numbers:dTreq_4sol_full_absorption_noon
+"Full absorption, shortwave noon",ΔT_req(5) (K),5.717805664449947,5.7,numbers:dTreq_5sol_full_absorption_noon
+"Full absorption, shortwave noon",t_mix at 3 K (sols),35.6961419565272,36,numbers:mixing_time_3K_full_absorption_noon
+"Full absorption, shortwave diurnal mean",Heating threshold (K),2.3899181107137113,2.4,numbers:threshold_heating_layer0_full_absorption_diurnal
+"Full absorption, shortwave diurnal mean",Destabilization threshold (K),2.4716393676625725,2.5,numbers:threshold_destabilisation_0_4km_full_absorption_diurnal
+"Full absorption, shortwave diurnal mean",ΔT_req(4) (K),6.411400054762414,6.4,numbers:dTreq_4sol_full_absorption_diurnal
+"Full absorption, shortwave diurnal mean",ΔT_req(5) (K),5.660546668240591,5.7,numbers:dTreq_5sol_full_absorption_diurnal
+"Full absorption, shortwave diurnal mean",t_mix at 3 K (sols),31.459155016037094,31,numbers:mixing_time_3K_full_absorption_diurnal

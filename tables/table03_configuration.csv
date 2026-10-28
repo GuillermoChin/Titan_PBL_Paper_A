@@ -1,0 +1,66 @@
+row,column,value,print,source
+Solar constant,symbol,S_⊙,S_⊙,preset huygens_baseline:radiation.solar_constant
+Solar constant,value,15.04,15.04,preset huygens_baseline:radiation.solar_constant
+Solar constant,units,W m-2,W m-2,preset huygens_baseline:radiation.solar_constant
+Solar constant,source,Hartwick et al. (2026),Hartwick et al. (2026),preset huygens_baseline:radiation.solar_constant
+Downward IR at model top,symbol,I_IR,I_IR,preset huygens_baseline:radiation.ir_top_flux
+Downward IR at model top,value,2.0,2,preset huygens_baseline:radiation.ir_top_flux
+Downward IR at model top,units,W m-2,W m-2,preset huygens_baseline:radiation.ir_top_flux
+Downward IR at model top,source,Hartwick et al. (2026),Hartwick et al. (2026),preset huygens_baseline:radiation.ir_top_flux
+Surface albedo,symbol,α,α,preset huygens_baseline:radiation.surface_albedo
+Surface albedo,value,0.3,0.3,preset huygens_baseline:radiation.surface_albedo
+Surface albedo,units,-,-,preset huygens_baseline:radiation.surface_albedo
+Surface albedo,source,Hartwick et al. (2026),Hartwick et al. (2026),preset huygens_baseline:radiation.surface_albedo
+Surface emissivity,symbol,ε,ε,preset huygens_baseline:radiation.surface_emissivity
+Surface emissivity,value,0.95,0.95,preset huygens_baseline:radiation.surface_emissivity
+Surface emissivity,units,-,-,preset huygens_baseline:radiation.surface_emissivity
+Surface emissivity,source,Hartwick et al. (2026),Hartwick et al. (2026),preset huygens_baseline:radiation.surface_emissivity
+Visible optical depth,symbol,τ_vis,τ_vis,preset huygens_baseline:radiation.optical_depth_visible
+Visible optical depth,value,8.0,8,preset huygens_baseline:radiation.optical_depth_visible
+Visible optical depth,units,-,-,preset huygens_baseline:radiation.optical_depth_visible
+Visible optical depth,source,Chatain et al. (2022),Chatain et al. (2022),preset huygens_baseline:radiation.optical_depth_visible
+Infrared optical depth,symbol,τ_IR,τ_IR,preset huygens_baseline:radiation.optical_depth_ir
+Infrared optical depth,value,10.0,10,preset huygens_baseline:radiation.optical_depth_ir
+Infrared optical depth,units,-,-,preset huygens_baseline:radiation.optical_depth_ir
+Infrared optical depth,source,Hartwick et al. (2026),Hartwick et al. (2026),preset huygens_baseline:radiation.optical_depth_ir
+Visible scaling exponent,symbol,γ,γ,preset huygens_baseline:radiation.visible_scaling_exponent
+Visible scaling exponent,value,0.21,0.21,preset huygens_baseline:radiation.visible_scaling_exponent
+Visible scaling exponent,units,-,-,preset huygens_baseline:radiation.visible_scaling_exponent
+Visible scaling exponent,source,Schneider et al. (2012),Schneider et al. (2012),preset huygens_baseline:radiation.visible_scaling_exponent
+IR weighting coefficient,symbol,f,f,preset huygens_baseline:radiation.ir_weighting_coefficient
+IR weighting coefficient,value,0.15,0.15,preset huygens_baseline:radiation.ir_weighting_coefficient
+IR weighting coefficient,units,-,-,preset huygens_baseline:radiation.ir_weighting_coefficient
+IR weighting coefficient,source,Chatain et al. (2022),Chatain et al. (2022),preset huygens_baseline:radiation.ir_weighting_coefficient
+Single scattering albedo,symbol,ω_0,ω_0,preset huygens_baseline:radiation.single_scattering_albedo
+Single scattering albedo,value,0.9,0.9,preset huygens_baseline:radiation.single_scattering_albedo
+Single scattering albedo,units,-,-,preset huygens_baseline:radiation.single_scattering_albedo
+Single scattering albedo,source,Chatain et al. (2022),Chatain et al. (2022),preset huygens_baseline:radiation.single_scattering_albedo
+Asymmetry factor,symbol,g_a,g_a,preset huygens_baseline:radiation.asymmetry_factor
+Asymmetry factor,value,0.85,0.85,preset huygens_baseline:radiation.asymmetry_factor
+Asymmetry factor,units,-,-,preset huygens_baseline:radiation.asymmetry_factor
+Asymmetry factor,source,Chatain et al. (2022),Chatain et al. (2022),preset huygens_baseline:radiation.asymmetry_factor
+Atmospheric layers,symbol,N,N,preset huygens_baseline:atmosphere.vertical_grid.n_layers
+Atmospheric layers,value,56,56,preset huygens_baseline:atmosphere.vertical_grid.n_layers
+Atmospheric layers,units,-,-,preset huygens_baseline:atmosphere.vertical_grid.n_layers
+Atmospheric layers,source,Hartwick et al. (2026),Hartwick et al. (2026),preset huygens_baseline:atmosphere.vertical_grid.n_layers
+Surface pressure,symbol,p_s,p_s,preset huygens_baseline:atmosphere.vertical_grid.surface_pressure
+Surface pressure,value,145000.0,1.45 × 10^5,preset huygens_baseline:atmosphere.vertical_grid.surface_pressure
+Surface pressure,units,Pa,Pa,preset huygens_baseline:atmosphere.vertical_grid.surface_pressure
+Surface pressure,source,Hartwick et al. (2026),Hartwick et al. (2026),preset huygens_baseline:atmosphere.vertical_grid.surface_pressure
+Model top pressure,symbol,p_t,p_t,preset huygens_baseline:atmosphere.vertical_grid.top_pressure
+Model top pressure,value,66000.0,6.60 × 10^4,preset huygens_baseline:atmosphere.vertical_grid.top_pressure
+Model top pressure,units,Pa,Pa,preset huygens_baseline:atmosphere.vertical_grid.top_pressure
+Model top pressure,source,Hartwick et al. (2026),Hartwick et al. (2026),preset huygens_baseline:atmosphere.vertical_grid.top_pressure
+Specific heat,symbol,c_p,c_p,preset huygens_baseline:atmosphere.gas.specific_heat_cp
+Specific heat,value,1101.0,1101,preset huygens_baseline:atmosphere.gas.specific_heat_cp
+Specific heat,units,J kg-1 K-1,J kg-1 K-1,preset huygens_baseline:atmosphere.gas.specific_heat_cp
+Specific heat,source,Hartwick et al. (2026),Hartwick et al. (2026),preset huygens_baseline:atmosphere.gas.specific_heat_cp
+Surface gravity,symbol,g,g,preset huygens_baseline:planet.gravity
+Surface gravity,value,1.352,1.352,preset huygens_baseline:planet.gravity
+Surface gravity,units,m s-2,m s-2,preset huygens_baseline:planet.gravity
+Surface gravity,source,standard,standard,preset huygens_baseline:planet.gravity
+Length of the Titan sol,symbol,-,-,preset huygens_baseline:planet.sol_length
+Length of the Titan sol,value,1378080.0,1 378 080,preset huygens_baseline:planet.sol_length
+Length of the Titan sol,units,s,s,preset huygens_baseline:planet.sol_length
+Length of the Titan sol,source,archive of Hartwick et al. (2026),archive of Hartwick et al. (2026),preset huygens_baseline:planet.sol_length
+Surface longwave boundary condition,value,Kirchhoff-consistent; full absorption for comparison,Kirchhoff-consistent; full absorption for comparison,radiation.surface_lw_boundary = kirchhoff | full_absorption (Section 2.2)

@@ -10,19 +10,19 @@ solution.
 This script checks that assumption explicitly rather than assuming it, and
 exits non-zero if the columns diverge.
 
-    python data/check_columns.py [ruta_al_archivo]
+    python code/check_columns.py [path_to_wrfout]
+
+The archive is located with TITAN_DATA_DIR (default: <package>/data); the
+output files may carry the published name or the NTFS-safe one (':' -> '_').
 """
 from __future__ import annotations
 import sys
 from pathlib import Path
-# El subconjunto de titan_pbl vive junto a este script
-sys.path.insert(0, str(Path(__file__).resolve().parent / "titan_pbl_subset"))
 import os
 import numpy as np
-import pandas as pd
 import xarray as xr
 
-DATA_DIR = os.environ.get("TITAN_DATA_DIR", str(Path(__file__).resolve().parent))
+DATA_DIR = os.environ.get("TITAN_DATA_DIR", str(Path(__file__).resolve().parents[1] / "data"))
 
 RUNS = [
     "Dry Simulations/1D_Huygens_TMN91_5sol",
@@ -31,7 +31,7 @@ RUNS = [
 ]
 
 # Variables que el analisis del Paper A lee efectivamente.
-CHECKED = ["TSK", "T_PHY", "PBLH", "HFX", "FLUX_LW_D", "FLUX_LW_U", "P", "PB"]
+CHECKED = ["TSK", "T_PHY", "PBLH", "HFX", "FLHC", "FLUX_LW_D", "FLUX_LW_U", "P", "PB", "PH", "PHB", "PSFC"]
 
 
 def resolve(relative: str) -> Path | None:
@@ -43,7 +43,7 @@ def resolve(relative: str) -> Path | None:
 
 
 def check(path: Path) -> tuple[int, int]:
-    """Devuelve (variables comparadas, variables donde las columnas difieren)."""
+    """Return (variables compared, variables whose two columns differ)."""
     ds = xr.open_dataset(path, decode_times=None)
     compared = differing = 0
     for name in CHECKED:
@@ -60,9 +60,9 @@ def check(path: Path) -> tuple[int, int]:
         if not np.allclose(first, second, rtol=0, atol=0):
             differing += 1
             worst = float(np.max(np.abs(first - second)))
-            print(f"    {name:<12} columnas DIFIEREN, maximo |delta| = {worst:.6g}")
+            print(f"    {name:<12} columns DIFFER, max |delta| = {worst:.6g}")
         else:
-            print(f"    {name:<12} columnas identicas")
+            print(f"    {name:<12} columns identical")
     ds.close()
     return compared, differing
 
@@ -72,8 +72,8 @@ def main() -> int:
         p for p in (resolve(r) for r in RUNS) if p is not None
     ]
     if not targets:
-        print(f"No se encontro ninguna corrida bajo {DATA_DIR}.")
-        print("Define TITAN_DATA_DIR o pasa la ruta del wrfout como argumento.")
+        print(f"No archive run found under {DATA_DIR}.")
+        print("Set TITAN_DATA_DIR or pass the path of a wrfout file.")
         return 2
 
     total_differing = 0
@@ -81,15 +81,15 @@ def main() -> int:
         print(f"\n{path.parent.name}")
         compared, differing = check(path)
         total_differing += differing
-        print(f"    -> {compared} variables comparadas, {differing} discrepantes")
+        print(f"    -> {compared} variables compared, {differing} differing")
 
     print()
     if total_differing:
-        print(f"FALLO: {total_differing} variables con columnas distintas. "
-              "Leer [..., 0, 0] no es equivalente a leer la columna fisica.")
+        print(f"FAIL: {total_differing} variables with differing columns. "
+              "Reading [..., 0, 0] is not equivalent to reading the physical column.")
         return 1
-    print("OK: las dos columnas son identicas en todas las variables analizadas. "
-          "La configuracion de columna unica es correcta y leer indice 0 es valido.")
+    print("OK: the two columns are identical in every variable checked; "
+          "reading index 0 is reading the single physical column.")
     return 0
 
 

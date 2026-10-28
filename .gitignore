@@ -1,13 +1,23 @@
 __pycache__/
-paper_A/
-code/paper_A/
 *.pyc
 *.pyo
+.pytest_cache/
 .ipynb_checkpoints/
 .venv/
 venv/
 env/
-*.nc
-*.nc4
 .DS_Store
 Thumbs.db
+
+# Intermediate outputs of code/run_all.py (regenerated from the external data)
+build/
+
+# External data (cite and download from Zenodo; see data/README_DATA.md)
+data/Dry Simulations/
+data/SPS Simulations/
+data/NSMT Simulations/
+data/MRPS Simulations/
+data/TAM Simulations*/
+*.nc
+*.nc4
+wrfout_*

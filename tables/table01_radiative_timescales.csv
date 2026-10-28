@@ -1,0 +1,40 @@
+row,column,value,print,source
+"tau_bulk (own, original submission, Sec. 2.4 inputs)",definition or region,"cp p / (g sigma T^3) — Gierasch/Stone/Tokano; cp = 1101, p = 1.45e5 Pa, g = 1.352, T = 93 K (original submission, Sec. 2.4)","cp p / (g sigma T^3) — Gierasch/Stone/Tokano; cp = 1101, p = 1.45e5 Pa, g = 1.352, T = 93 K (original submission, Sec. 2.4)","build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+"tau_bulk (own, original submission, Sec. 2.4 inputs)",value as reported,2.588917e+09 s,2.588917e+09 s,"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+"tau_bulk (own, original submission, Sec. 2.4 inputs)",Titan years,2.7809428519277137,2.8,build/r3/t5_tau_rad_table.csv:value_titan_years
+"tau_bulk (own, original submission, Sec. 2.4 inputs)",conversion,"s / (29.5 x 31 557 600 s) (Strobel 2009, p. 242)","s / (29.5 x 31 557 600 s) (Strobel 2009, p. 242)",build/r3/t5_tau_rad_table.csv:conversion_method
+"tau_lin (own, original submission, Eq. 6)",definition or region,"cp p / (4 g sigma T^3) — linearised, conservative bound; cp = 1101, p = 1.45e5 Pa, g = 1.352, T = 93 K (original submission, Sec. 2.4)","cp p / (4 g sigma T^3) — linearised, conservative bound; cp = 1101, p = 1.45e5 Pa, g = 1.352, T = 93 K (original submission, Sec. 2.4)","build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+"tau_lin (own, original submission, Eq. 6)",value as reported,6.472291e+08 s,6.472291e+08 s,"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+"tau_lin (own, original submission, Eq. 6)",Titan years,0.6952357129819284,0.70,build/r3/t5_tau_rad_table.csv:value_titan_years
+"tau_lin (own, original submission, Eq. 6)",conversion,"s / (29.5 x 31 557 600 s) (Strobel 2009, p. 242)","s / (29.5 x 31 557 600 s) (Strobel 2009, p. 242)",build/r3/t5_tau_rad_table.csv:conversion_method
+Smith et al. 1981 (p. 168),definition or region,"heat content / mean solar heating rate; whole atmosphere; N2, Voyager radio-science surface pressure and temperature","heat content / mean solar heating rate; whole atmosphere; N2, Voyager radio-science surface pressure and temperature","build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+Smith et al. 1981 (p. 168),value as reported,138 years (Earth years: 'roughly 400 times the value for Earth'),138 years (Earth years: 'roughly 400 times the value for Earth'),"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+Smith et al. 1981 (p. 168),Titan years,4.677966101694915,4.7,build/r3/t5_tau_rad_table.csv:value_titan_years
+Smith et al. 1981 (p. 168),conversion,"Earth years / 29.5 (Strobel et al. 2009, p. 242)","Earth years / 29.5 (Strobel et al. 2009, p. 242)",build/r3/t5_tau_rad_table.csv:conversion_method
+Tokano et al. 1999 (p. 499),definition or region,"Stone (1975): gamma p H / ((gamma-1) sigma T^4), Eq. 8 (p. 497); near the surface (GCM profile)","Stone (1975): gamma p H / ((gamma-1) sigma T^4), Eq. 8 (p. 497); near the surface (GCM profile)","build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+Tokano et al. 1999 (p. 499),value as reported,about three Titan years,about three Titan years,"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+Tokano et al. 1999 (p. 499),Titan years,3.0,3.0,build/r3/t5_tau_rad_table.csv:value_titan_years
+Tokano et al. 1999 (p. 499),conversion,given in Titan years,given in Titan years,build/r3/t5_tau_rad_table.csv:conversion_method
+Charnay & Lebonnois 2012 (p. 106),definition or region,not given; attributed to ref. 13 = Tokano et al. 1999; troposphere (lower bound),not given; attributed to ref. 13 = Tokano et al. 1999; troposphere (lower bound),"build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+Charnay & Lebonnois 2012 (p. 106),value as reported,larger than 2.5 Titan years,larger than 2.5 Titan years,"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+Charnay & Lebonnois 2012 (p. 106),Titan years,2.5,2.5,build/r3/t5_tau_rad_table.csv:value_titan_years
+Charnay & Lebonnois 2012 (p. 106),conversion,given in Titan years,given in Titan years,build/r3/t5_tau_rad_table.csv:conversion_method
+Strobel et al. 2009 (p. 242),definition or region,temperature / cooling rate (Fig. 10.5); 20 km altitude,temperature / cooling rate (Fig. 10.5); 20 km altitude,"build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+Strobel et al. 2009 (p. 242),value as reported,about 10 Titan years,about 10 Titan years,"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+Strobel et al. 2009 (p. 242),Titan years,10.0,10,build/r3/t5_tau_rad_table.csv:value_titan_years
+Strobel et al. 2009 (p. 242),conversion,given in Titan years,given in Titan years,build/r3/t5_tau_rad_table.csv:conversion_method
+Strobel et al. 2009 (p. 237),definition or region,radiative time constant (not defined on this page); 10-20 km,radiative time constant (not defined on this page); 10-20 km,"build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+Strobel et al. 2009 (p. 237),value as reported,~300 year (Earth years; compared with 'a Saturnian year (= 29.5 year)'),~300 year (Earth years; compared with 'a Saturnian year (= 29.5 year)'),"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+Strobel et al. 2009 (p. 237),Titan years,10.169491525423728,10,build/r3/t5_tau_rad_table.csv:value_titan_years
+Strobel et al. 2009 (p. 237),conversion,"Earth years / 29.5 (Strobel et al. 2009, p. 242)","Earth years / 29.5 (Strobel et al. 2009, p. 242)",build/r3/t5_tau_rad_table.csv:conversion_method
+"Mitchell & Lora 2016 (pp. 360-361, Table 2)",definition or region,"tau_IR Cp Delta_p / (4 g sigma T^3); troposphere, tau_IR ~ 10, Huygens Delta_p and T","tau_IR Cp Delta_p / (4 g sigma T^3); troposphere, tau_IR ~ 10, Huygens Delta_p and T","build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+"Mitchell & Lora 2016 (pp. 360-361, Table 2)",value as reported,~200 years (Earth years; omega = 2 pi/(29.5 years)),~200 years (Earth years; omega = 2 pi/(29.5 years)),"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+"Mitchell & Lora 2016 (pp. 360-361, Table 2)",Titan years,6.779661016949152,6.8,build/r3/t5_tau_rad_table.csv:value_titan_years
+"Mitchell & Lora 2016 (pp. 360-361, Table 2)",conversion,"Earth years / 29.5 (Strobel et al. 2009, p. 242)","Earth years / 29.5 (Strobel et al. 2009, p. 242)",build/r3/t5_tau_rad_table.csv:conversion_method
+"Mitchell & Lora 2016 (p. 361, Table 2)",definition or region,"tau_IR,BL Cp Delta_p_BL / (4 g sigma T_BL^3); dry boundary layer, Delta_p_BL ~ 500 hPa (~5 km), tau_IR,BL ~ 1","tau_IR,BL Cp Delta_p_BL / (4 g sigma T_BL^3); dry boundary layer, Delta_p_BL ~ 500 hPa (~5 km), tau_IR,BL ~ 1","build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+"Mitchell & Lora 2016 (p. 361, Table 2)",value as reported,~7 years (Earth years),~7 years (Earth years),"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+"Mitchell & Lora 2016 (p. 361, Table 2)",Titan years,0.23728813559322035,0.24,build/r3/t5_tau_rad_table.csv:value_titan_years
+"Mitchell & Lora 2016 (p. 361, Table 2)",conversion,"Earth years / 29.5 (Strobel et al. 2009, p. 242)","Earth years / 29.5 (Strobel et al. 2009, p. 242)",build/r3/t5_tau_rad_table.csv:conversion_method
+"Flasar, Achterberg & Schinder 2014 (NTRS abstract (p. 106 not available))",definition or region,radiative relaxation time; troposphere: 'long compared to seasonal time scales',radiative relaxation time; troposphere: 'long compared to seasonal time scales',"build/r3/t5_tau_rad_table.csv:definition,region_or_inputs"
+"Flasar, Achterberg & Schinder 2014 (NTRS abstract (p. 106 not available))",value as reported,(no value),(no value),"build/r3/t5_tau_rad_table.csv:value_as_written,units_as_written"
+"Flasar, Achterberg & Schinder 2014 (NTRS abstract (p. 106 not available))",conversion,no numerical value,no numerical value,build/r3/t5_tau_rad_table.csv:conversion_method

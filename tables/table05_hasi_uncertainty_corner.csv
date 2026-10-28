@@ -1,0 +1,26 @@
+row,column,value,print,source
+Nominal (Table 3),Δθ (K),0.651551165266838,0.65,numbers:delta_theta_0_4km ± numbers:hasi_sigma_dtheta_independent_brief
+Nominal (Table 3),"ΔT_req(4), Kirchhoff-consistent (K)",5.4266987603900425,5.4,numbers:robust_dTreq4_kirchhoff_lw_preset_nominal
+Nominal (Table 3),"ΔT_req(4), Full absorption (K)",6.390031677639726,6.4,numbers:robust_dTreq4_full_absorption_lw_preset_nominal
+Nominal (Table 3),"ΔT_req(5), Kirchhoff-consistent (K)",4.652757933515481,4.7,numbers:robust_dTreq5_kirchhoff_lw_preset_nominal
+Nominal (Table 3),"ΔT_req(5), Full absorption (K)",5.638687213872678,5.6,numbers:robust_dTreq5_full_absorption_lw_preset_nominal
+Δθ − σ_Δθ,Δθ (K),0.2979977746735642,0.30,numbers:delta_theta_0_4km ± numbers:hasi_sigma_dtheta_independent_brief
+Δθ − σ_Δθ,"ΔT_req(4), Kirchhoff-consistent (K)",3.284042910138787,3.3,numbers:robust_dTreq4_kirchhoff_lw_preset_minus_sigma_independent
+Δθ − σ_Δθ,"ΔT_req(4), Full absorption (K)",4.311667453984764,4.3,numbers:robust_dTreq4_full_absorption_lw_preset_minus_sigma_independent
+Δθ − σ_Δθ,"ΔT_req(5), Kirchhoff-consistent (K)",2.907873353823042,2.9,numbers:robust_dTreq5_kirchhoff_lw_preset_minus_sigma_independent
+Δθ − σ_Δθ,"ΔT_req(5), Full absorption (K)",3.94736128585663,3.9,numbers:robust_dTreq5_full_absorption_lw_preset_minus_sigma_independent
+Δθ + σ_Δθ,Δθ (K),1.0051045558601117,1.0,numbers:delta_theta_0_4km ± numbers:hasi_sigma_dtheta_independent_brief
+Δθ + σ_Δθ,"ΔT_req(4), Kirchhoff-consistent (K)",7.438093630643167,7.4,numbers:robust_dTreq4_kirchhoff_lw_preset_plus_sigma_independent
+Δθ + σ_Δθ,"ΔT_req(4), Full absorption (K)",8.345799678058691,8.3,numbers:robust_dTreq4_full_absorption_lw_preset_plus_sigma_independent
+Δθ + σ_Δθ,"ΔT_req(5), Kirchhoff-consistent (K)",6.308950549634061,6.3,numbers:robust_dTreq5_kirchhoff_lw_preset_plus_sigma_independent
+Δθ + σ_Δθ,"ΔT_req(5), Full absorption (K)",7.247347475686837,7.2,numbers:robust_dTreq5_full_absorption_lw_preset_plus_sigma_independent
+Most favorable corner,Δθ (K),0.651551165266838,0.65,numbers:delta_theta_0_4km ± numbers:hasi_sigma_dtheta_independent_brief
+Most favorable corner,"ΔT_req(4), Kirchhoff-consistent (K)",1.7598571125123332,1.8,numbers:robust_dTreq4_kirchhoff_lw_corner_lw_nominal
+Most favorable corner,"ΔT_req(4), Full absorption (K)",1.7598571125123332,1.8,numbers:robust_dTreq4_full_absorption_lw_corner_lw_nominal
+Most favorable corner,"ΔT_req(5), Kirchhoff-consistent (K)",1.4952747474595425,1.5,numbers:robust_dTreq5_kirchhoff_lw_corner_lw_nominal
+Most favorable corner,"ΔT_req(5), Full absorption (K)",1.4952747474595425,1.5,numbers:robust_dTreq5_full_absorption_lw_corner_lw_nominal
+Corner with Δθ − σ_Δθ,Δθ (K),0.2979977746735642,0.30,numbers:delta_theta_0_4km ± numbers:hasi_sigma_dtheta_independent_brief
+Corner with Δθ − σ_Δθ,"ΔT_req(4), Kirchhoff-consistent (K)",1.03727911764985,1.0,numbers:robust_dTreq4_kirchhoff_lw_corner_lw_minus_sigma_independent
+Corner with Δθ − σ_Δθ,"ΔT_req(4), Full absorption (K)",1.03727911764985,1.0,numbers:robust_dTreq4_full_absorption_lw_corner_lw_minus_sigma_independent
+Corner with Δθ − σ_Δθ,"ΔT_req(5), Kirchhoff-consistent (K)",0.9136341765191676,0.91,numbers:robust_dTreq5_kirchhoff_lw_corner_lw_minus_sigma_independent
+Corner with Δθ − σ_Δθ,"ΔT_req(5), Full absorption (K)",0.9136341765191676,0.91,numbers:robust_dTreq5_full_absorption_lw_corner_lw_minus_sigma_independent

@@ -203,7 +203,8 @@ class ModelState:
     """Downward longwave flux reaching the surface [W m-2]."""
 
     longwave_up: float = 0.0
-    """Upward longwave emission from the surface [W m-2]."""
+    """Total upward longwave flux at the surface [W m-2]: the emission, plus
+    the reflected part when ``radiation.surface_lw_boundary='kirchhoff'``."""
 
     net_radiation: float = 0.0
     """Net surface radiative flux Qrad [W m-2], Equation 2."""
@@ -537,7 +538,7 @@ def _initial_methane_profile(
     if source == "uniform":
         # Perfil bien mezclado. Es una simplificacion explicita y documentada,
         # no un perfil observacional inventado: se usa cuando no se dispone del
-        # reanalisis GCMS digitalizado. Ver H-11 en docs/HALLAZGOS.md.
+        # reanalisis GCMS digitalizado. Ver H-11.
         profile = config.methane.initial_atmospheric_profile
         if profile.relative_humidity is not None:
             from titan_pbl.schemes.methane.saturation import MethaneSchemeBase
