@@ -1,6 +1,6 @@
-# Paper A: reproduction package (v2.0.0)
+# Paper A: reproduction package (v2.0.1)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23743549.svg)](https://doi.org/10.5281/zenodo.23743549)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23747852.svg)](https://doi.org/10.5281/zenodo.23747852)
 
 **Radiative Timescale Constraints on Boundary Layer Evolution in Models of Titan**
 
@@ -190,8 +190,8 @@ Please cite the article and this package:
 > (PSS-D-26-00233).
 
 > Chin-Canche, G. A., 2026. Paper A reproduction package: Radiative Timescale
-> Constraints on Boundary Layer Evolution in Models of Titan, version 2.0.0.
-> Zenodo, [doi:10.5281/zenodo.23743549](https://doi.org/10.5281/zenodo.23743549).
+> Constraints on Boundary Layer Evolution in Models of Titan, version 2.0.1.
+> Zenodo, [doi:10.5281/zenodo.23747852](https://doi.org/10.5281/zenodo.23747852).
 
 If you use the data, please also cite Hartwick et al. (2026, *Planet. Sci. J.*
 7, 178) and their archive (doi:10.5281/zenodo.17246644), Han and Lora (2025,

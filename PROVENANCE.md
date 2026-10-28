@@ -1,6 +1,6 @@
 # Provenance
 
-Package version 2.0.0, prepared on 2026-10-28. Archived on Zenodo as [doi:10.5281/zenodo.23743549](https://doi.org/10.5281/zenodo.23743549).
+Package version 2.0.1, prepared on 2026-10-28. Archived on Zenodo as [doi:10.5281/zenodo.23747852](https://doi.org/10.5281/zenodo.23747852).
 
 ## Origin
 
@@ -56,10 +56,10 @@ SHA-256 of every file of the package except this one. `code/audit_paper_A_number
 |---|---|
 | `.gitattributes` | 4ff1b603afb95a25568930dfaa98b4c79a0449eab9ae33718c464e0ac9b56de2 |
 | `.gitignore` | 117420e0ce342414147b787770fafceb70383f030abb74796c948daf6f84590b |
-| `CHANGELOG.md` | 106f38e24c72bc0c10bcf2763a78309b0b49e67b9942e0d40bf46f53f1aed645 |
-| `CITATION.cff` | 0d6e58b510d8e2cc75c14da8f983f2dfc4731038b282f01a188bedf9f0860671 |
+| `CHANGELOG.md` | 0f634efdf080212c617ba37a2552de6224266f91617440e3a29371d3cb2cb219 |
+| `CITATION.cff` | d7daa0b7265ddfbf92ade8d474b4fb963869b7eec609d187a7a79dd65310f42f |
 | `LICENSE` | a86f82f0d30648d5b575a87f7fb38a0d8b4d743f2d47c64aa15638dd97601c9a |
-| `README.md` | 1ea05189218b150f3139224e5b7e5bf2366ee9b7245ea46dbb8f60fe741c3868 |
+| `README.md` | d7a680a35df53f444ab67f3504bf84213d0e5516a9a486cd1f188df4699a52e5 |
 | `code/analysis/inputs/literature_quantities.csv` | a172e259bb03853c0bfb41986c873198f9dfb1b3c651cb05640ed01e44915a8c |
 | `code/analysis/inputs/tam_16791001_md5.txt` | bee0b713cb78d8d976382deed8adae3b86bc1d30007564715e9360b29e88a117 |
 | `code/analysis/inputs/wrf_myj_transcription.json` | 3b883c83befcb11890e9673f2e66694653355e42926a36b0c59a57dd35d2e27e |

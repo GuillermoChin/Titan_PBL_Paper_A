@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1] - 2026-10-28
+
+### Fixed
+- Corrected the Zenodo DOI. Version 2.0.0 listed doi:10.5281/zenodo.23743549,
+  which was never registered; the archived version is doi:10.5281/zenodo.23747852.
+  No code, data, figures, tables or numbers changed.
+
 ## [2.0.0] - 2026-10-28
 
 Package for the revised version of the manuscript submitted to *Planetary and
