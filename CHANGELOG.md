@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.0] - 2026-10-26
+## [2.0.0] - 2026-10-28
 
 Package for the revised version of the manuscript submitted to *Planetary and
 Space Science* (PSS-D-26-00233). Version 1.0.0 remains available at the tag

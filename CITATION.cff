@@ -18,8 +18,8 @@ authors:
     email: "gcchin@itescam.edu.mx"
     orcid: "https://orcid.org/0000-0003-2104-6625"
 version: "2.0.0"
-date-released: "2026-10-26"
-doi: "10.5281/zenodo.PENDING"
+date-released: "2026-10-28"
+doi: "10.5281/zenodo.23743549"
 license: BSD-3-Clause
 repository-code: "https://github.com/GuillermoChin/Titan_PBL_Paper_A"
 keywords:
